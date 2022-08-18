@@ -168,14 +168,14 @@ This will display the file.
 Once started, less will display the text file one page at a time. We can use the Page Up and Page Down keys to move through the text file. To exit less, we type "q".  
 
 Command	                Action  
-Page Up or b	        Scroll back one page  
-Page Down or space	    Scroll forward one page     
-G	                    Go to the end of the text file  
-1G	                    Go to the beginning of the text file  
-/characters	            Search forward in the text file for an occurrence of the specified characters  
-n	                    Repeat the previous search  
-h	                    Display a complete list less commands and options  
-q	                    Quit  
+Page Up or `b`	        Scroll back one page  
+Page Down or `space`	Scroll forward one page     
+`G`	                    Go to the end of the text file  
+`1G`	                Go to the beginning of the text file  
+`/characters`	        Search forward in the text file for an occurrence of the specified characters  
+`n`	                    Repeat the previous search  
+`h`	                    Display a complete list less commands and options  
+`q`	                    Quit  
 
 *file*  
 As we wander around our Linux system, it is helpful to determine what kind of data a file contains before we try to view it. This is where the file command comes in. file will examine a file and tell us what kind of file it is.  
@@ -197,28 +197,28 @@ These four commands are among the most frequently used Linux commands. They are 
 Before we begin with our commands, we'll first look at a shell feature that makes these commands so powerful. Since the shell uses filenames so much, it provides special characters to help you rapidly specify groups of filenames. These special characters are called wildcards. Wildcards allow you to select filenames based on patterns of characters.  
 
 Wildcard	                Meaning  
-*	                        Matches any characters  
-?	                        Matches any single character  
-[characters]	            Matches any character that is a member of the set characters. The set of characters may also be expressed as a POSIX character class such as one of the following:  
+`*`	                        Matches any characters  
+`?`	                        Matches any single character  
+`[characters]`	            Matches any character that is a member of the set characters. The set of characters may also be expressed as a POSIX character class such as one of the following:  
                             [:alnum:]	        Alphanumeric characters  
                             [:alpha:]	        Alphabetic characters  
                             [:digit:]	        Numerals  
                             [:upper:]	        Uppercase alphabetic characters  
                             [:lower:]	        Lowercase alphabetic characters  
 
-[!characters]	            Matches any character that is not a member of the set characters  
+`[!characters]`	            Matches any character that is not a member of the set characters  
 
 Using wildcards, it is possible to construct very sophisticated selection criteria for filenames. Here are some examples of patterns and what they match:  
 
 Pattern	                    Matches  
-*	                        All filenames  
-g*	                        All filenames that begin with the character "g"  
-b*.txt	                    All filenames that begin with the character "b" and end with the characters ".txt"  
-Data???	                    Any filename that begins with the characters "Data" followed by exactly 3 more characters  
-[abc]*	                    Any filename that begins with "a" or "b" or "c" followed by any other characters  
-[[:upper:]]*	            Any filename that begins with an uppercase letter. This is an example of a character class.   
-BACKUP.[[:digit:]][[:digit:]]	Another example of character classes. This pattern matches any filename that begins with the characters "BACKUP." followed by exactly two numerals.  
-*[![:lower:]]	            Any filename that does not end with a lowercase letter.  
+`*`	                        All filenames  
+`g*`	                    All filenames that begin with the character "g"  
+`b*.txt`	                All filenames that begin with the character "b" and end with the characters ".txt"  
+`Data???`	                Any filename that begins with the characters "Data" followed by exactly 3 more characters  
+`[abc]*`	                Any filename that begins with "a" or "b" or "c" followed by any other characters  
+`[[:upper:]]*`	            Any filename that begins with an uppercase letter. This is an example of a character class.   
+`BACKUP.[[:digit:]][[:digit:]]`	Another example of character classes. This pattern matches any filename that begins with the characters "BACKUP." followed by exactly two numerals.  
+`*[![:lower:]]`	            Any filename that does not end with a lowercase letter.  
 
 ## cp
 The cp program copies files and directories.   
@@ -231,21 +231,20 @@ A note on notation: ... signifies that an item can be repeated one or more times
 
 Other useful examples of cp and its options include:  
 Command	                Results  
-cp file1 file2	        Copies the contents of file1 into file2. If file2 does not exist, it is created; otherwise, file2 is silently overwritten with the contents of file1.  
-cp -i file1 file2	    Like above however, since the "-i" (interactive) option is specified, if file2 exists, the user is prompted before it is overwritten with the contents of file1.  
-cp file1 dir1	        Copy the contents of file1 (into a file named file1) inside of directory dir1.  
-cp -R dir1 dir2	        Copy the contents of the directory dir1. If directory dir2 does not exist, it is created. Otherwise, it creates a directory named dir1 within directory dir2.  
+`cp file1 file2`	    Copies the contents of file1 into file2. If file2 does not exist, it is created; otherwise, file2 is silently overwritten with the contents of file1.  
+`cp -i file1 file2`	    Like above however, since the "-i" (interactive) option is specified, if file2 exists, the user is prompted before it is overwritten with the contents of file1.  
+`cp file1 dir1`	        Copy the contents of file1 (into a file named file1) inside of directory dir1.  
+`cp -R dir1 dir2`	    Copy the contents of the directory dir1. If directory dir2 does not exist, it is created. Otherwise, it creates a directory named dir1 within directory dir2.  
 
 ## mv
-The mv command moves or renames files and directories depending on how it is used. It will either move one or more files to a different directory, or it will rename a file or directory.   
-To rename a file, it is used like this:  
+The mv command moves or renames files and directories depending on how it is used. It will either move one or more files to a different directory, or it will rename a file or directory. To rename a file, it is used like this:  
 `mv filename1 filename2`  
 
 To move files (and/or directories) to a different directory:  
 `mv file... directory`  
 
 Command	                        Results  
-`mv file1 file2`	                If file2 does not exist, then file1 is renamed file2. If file2 exists, its contents are silently replaced with the contents of file1.  
+`mv file1 file2`	            If file2 does not exist, then file1 is renamed file2. If file2 exists, its contents are silently replaced with the contents of file1.  
 `mv -i file1 file2`	            Like above however, since the "-i" (interactive) option is specified, if file2 exists, the user is prompted before it is overwritten with the contents of file1.  
 `mv file1 file2 dir1`	            The files file1 and file2 are moved to directory dir1. If dir1 does not exist, mv will exit with an error.  
 `mv dir1 dir2`	                If dir2 does not exist, then dir1 is renamed dir2. If dir2 exists, the directory dir1 is moved within directory dir2.  
