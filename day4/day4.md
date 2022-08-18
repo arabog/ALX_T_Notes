@@ -1,7 +1,7 @@
 # Linux Navigation
 <a href="http://linuxcommand.org/lc3_lts0020.php" target="_blank">Linux Navigation</a>  
  
-In this lesson, we will introduce our first three commands: 
+In this lesson, we will introduce our first three commands:   
 `pwd` (print working directory),   
 `cd` (change directory), and  
 `ls` (list files and directories).  
@@ -288,6 +288,26 @@ This directory contains mostly files that are required temporarily. Many program
 
 *Linux Filesystem Hierarchy*  
 https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/tmp.html
+
+
+Explore:  
+*man pwd*  
+*man ls*  
+*man cd*  
+*man less*  
+*man touch*  
+*man cp*  
+*man mv*  
+*man rm*  
+*man mkdir*  
+*man rmdir*  
+
+Q: Which command should you use to delete a directory?  
+`rmdir`  
+
+Q: Then, remove the directory empty_directory 
+`rmdir empty_directory`  
+
 
 
 <!-- ![l7](l7.png?raw=true "l7")
