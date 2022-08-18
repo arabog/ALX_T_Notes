@@ -30,7 +30,7 @@ The "." notation refers to the working directory itself and the ".." notation re
 We could do that two different ways. First, with an absolute pathname:  
 ![l2](l2.png?raw=true "l2")
 
-Or, with a relative pathname:
+Or, with a relative pathname:  
 ![l3](l3.png?raw=true "l3")
 
 Absolute means stating the exact path while relative means no path was stated but move a step back.  
@@ -73,6 +73,7 @@ Command	                    Result
 `ls -la ..`	                List all files (even ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format  
 
 ![l6](l6.png?raw=true "l6")
+![l10](l10.png?raw=true "l10")
 ![l7](l7.png?raw=true "l7")
 
 Most commands operate like this: `command -options arguments` where command is the name of the command, -options is one or more adjustments to the command's behavior, and arguments is one or more "things" upon which the command operates.  
@@ -85,8 +86,6 @@ If we use the -l option with ls, you will get a file listing that contains a wea
 
 ![l8](l8.png?raw=true "l8")
 
-![l10](l10.png?raw=true "l10")
-
 *File Name* The name of the file or directory.  
 *Modification Time* The last time the file was modified. If the last modification occurred more than six months in the past, the date and year are displayed. Otherwise, the time of day is shown.  
 *Size* The size of the file in bytes.  
@@ -95,62 +94,8 @@ If we use the -l option with ls, you will get a file listing that contains a wea
 *File Permissions* A representation of the file's access permissions. The first character is the type of file. A "-" indicates a regular (ordinary) file. A "d" indicates a directory. The second set of three characters represent the read, write, and execution rights of the file's owner. The next three represent the rights of the file's group, and the final three represent the rights granted to everybody else.  
 
 ### less
-less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.  
-
-
-# Linux - Looking Around
-Now that we know how to move from working directory to working directory, we're going to take a tour of our Linux system and, along the way, learn some things about what makes it tick. But before we begin, we have to learn about some tools that will come in handy during our journey. These are:
-
-ls (list files and directories)
-less (view text files)
-file (classify a file's contents)
-
-*ls*
-The ls command is used to list the contents of a directory. It is probably the most commonly used Linux command. It can be used in a number of different ways. Here are some examples:
-
-Command	                Result
-ls	                    List the files in the working directory  
-ls /bin	                List the files in the /bin directory (or any other directory we care to specify)  
-ls -l	                List the files in the working directory in long format  
-ls -l /etc /bin	        List the files in the /bin directory and the /etc directory in long format  
-ls -la ..	            List all files (even ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format  
-These examples also point out an important concept about commands. Most commands operate like this:  
-`command -options arguments`  
-where command is the name of the command, -options is one or more adjustments to the command's behavior, and arguments is one or more "things" upon which the command operates.  
-
-In the case of ls, we see that ls is the name of the command, and that it can have one or more options, such as -a and -l, and it can operate on one or more files or directories.  
-
-A Closer Look at Long Format  
-If we use the -l option with ls, you will get a file listing that contains a wealth of information about the files being listed. Here's an example:  
-
--rw-------   1 me       me            576 Apr 17  2019 weather.txt  
-drwxr-xr-x   6 me       me           1024 Oct  9  2019 web_page  
--rw-rw-r--   1 me       me         276480 Feb 11 20:41 web_site.tar  
--rw-------   1 me       me           5743 Dec 16  2018 xmas_file.txt  
-
-----------     -------  -------  -------- ------------ -------------
-    |             |        |         |         |             |
-    |             |        |         |         |         File Name
-    |             |        |         |         |
-    |             |        |         |         +---  Modification Time
-    |             |        |         |
-    |             |        |         +-------------   Size (in bytes)
-    |             |        |
-    |             |        +-----------------------        Group
-    |             |
-    |             +--------------------------------        Owner
-    |
-    +----------------------------------------------   File Permissions
-
-File Name The name of the file or directory.  
-Modification Time The last time the file was modified. If the last modification occurred more than six months in the past, the date and year are displayed. Otherwise, the time of day is shown.  
-Size The size of the file in bytes.  
-Group The name of the group that has file permissions in addition to the file's owner.  
-Owner The name of the user who owns the file.  
-File Permissions A representation of the file's access permissions. The first character is the type of file. A "-" indicates a regular (ordinary) file. A "d" indicates a directory. The second set of three characters represent the read, write, and execution rights of the file's owner. The next three represent the rights of the file's group, and the final three represent the rights granted to everybody else. We'll discuss this in more detail in a later lesson.  
-
-less  
-less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.  
+less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable. 
+![l11](l11.png?raw=true "l11") 
 
 ### What is "text"?
 There are many ways to represent information on a computer. All methods involve defining a relationship between the information and some numbers that will be used to represent it. Computers, after all, only understand numbers and all data is converted to numeric representation.  
