@@ -100,17 +100,12 @@ less is a program that lets us view text files. This is very handy since many of
 ### What is "text"?
 There are many ways to represent information on a computer. All methods involve defining a relationship between the information and some numbers that will be used to represent it. Computers, after all, only understand numbers and all data is converted to numeric representation.  
 
-Some of these representation systems are very complex (such as compressed multimedia files), while others are rather simple. One of the earliest and simplest is called ASCII text. ASCII (pronounced "As-Key") is short for American Standard Code for Information Interchange. This is a simple encoding scheme that was first used on Teletype machines to map keyboard characters to numbers.  
+Some of these representation systems are very complex (such as compressed multimedia files), while others are rather simple. One of the earliest and simplest is called ASCII text. ASCII (pronounced "As-Key") is short for American Standard Code for Information Interchange. This is a simple encoding scheme that was first used on Teletype machines to map keyboard characters to numbers. Text is a simple one-to-one mapping of characters to numbers. It is very compact. Fifty characters of text translates to fifty bytes of data.  
 
-Text is a simple one-to-one mapping of characters to numbers. It is very compact. Fifty characters of text translates to fifty bytes of data.  
+The less program is invoked by simply typing: `less text_file` This will display the file.  
 
-
-The less program is invoked by simply typing:  
-`less text_file`  
-This will display the file.  
-
-*Controlling less*  
-Once started, less will display the text file one page at a time. We can use the Page Up and Page Down keys to move through the text file. To exit less, we type "q".  
+**Controlling less**  
+Once started, less will display the text file one page at a time. We can use the `Page Up` and `Page Down` keys to move through the text file. To exit less, we type `q`.  
 
 Command	                Action  
 Page Up or `b`	        Scroll back one page  
@@ -122,11 +117,8 @@ Page Down or `space`	Scroll forward one page
 `h`	                    Display a complete list less commands and options  
 `q`	                    Quit  
 
-*file*  
-As we wander around our Linux system, it is helpful to determine what kind of data a file contains before we try to view it. This is where the file command comes in. file will examine a file and tell us what kind of file it is.  
-
-To use the file program, we just type:  
-`file name_of_file`  
+**file**  
+As we wander around our Linux system, it is helpful to determine what kind of data a file contains before we try to view it. This is where the file command comes in. file will examine a file and tell us what kind of file it is. To use the file program, we just type: `file name_of_file`  
 
 
 # Linux - manipulating files
@@ -134,12 +126,14 @@ This lesson will introduce the following commands:
 `cp` - copy files and directories  
 `mv` - move or rename files and directories  
 `rm` - remove files and directories  
+`rmdir` - remove directories  
 `mkdir` - create directories  
 
-These four commands are among the most frequently used Linux commands. They are the basic commands for manipulating both files and directories.  
+
+These five commands are among the most frequently used Linux commands. They are the basic commands for manipulating both files and directories.  
 
 ## Wildcards
-Before we begin with our commands, we'll first look at a shell feature that makes these commands so powerful. Since the shell uses filenames so much, it provides special characters to help you rapidly specify groups of filenames. These special characters are called wildcards. Wildcards allow you to select filenames based on patterns of characters.  
+Before we begin with our commands, we'll first look at a shell feature that makes these commands so powerful. Since the shell uses filenames so much, it provides special characters to help you rapidly specify groups of filenames. These special characters are called `wildcards`. *Wildcards allow you to select filenames based on patterns of characters.*  
 
 Wildcard	                Meaning  
 `*`	                        Matches any characters  
@@ -172,7 +166,10 @@ The cp program copies files and directories.
 It can also be used to copy multiple files (and/or directories) to a different directory:  
 `cp file... directory`  
 
-A note on notation: ... signifies that an item can be repeated one or more times.    
+A note on notation: `...` signifies that an item can be repeated one or more times. e.g `cp file1 file2 file3 directory`   
+if u r copying a directory too, `cp -r file1 dir1 file2 file3 directory`
+
+![l12](l12.png?raw=true "l12") 
 
 Other useful examples of cp and its options include:  
 Command	                Results  
@@ -182,7 +179,7 @@ Command	                Results
 `cp -R dir1 dir2`	    Copy the contents of the directory dir1. If directory dir2 does not exist, it is created. Otherwise, it creates a directory named dir1 within directory dir2.  
 
 ## mv
-The mv command moves or renames files and directories depending on how it is used. It will either move one or more files to a different directory, or it will rename a file or directory. To rename a file, it is used like this:  
+The mv command *moves or renames* files and directories depending on how it is used. It will either move one or more files to a different directory, or it will rename a file or directory. To rename a file, it is used like this:  
 `mv filename1 filename2`  
 
 To move files (and/or directories) to a different directory:  
@@ -209,10 +206,10 @@ Command	                Results
 # Be careful with rm!
 Linux does not have an undelete command. Once you delete something with rm, it's gone. You can inflict terrific damage on your system with rm if you are not careful, particularly with wildcards.  
 
-Before you use rm with wildcards, try this helpful trick: construct your command using ls instead. By doing this, you can see the effect of your wildcards before you delete files.  
+Before you use `rm` with wildcards, try this helpful trick: construct your command using `ls` instead. By doing this, you can see the effect of your wildcards before you delete files.  
 
 ## mkdir
-The mkdir command is used to create directories.   
+The `mkdir` command is used to create directories.   
 `mkdir directory...`
 
 Using Commands with Wildcards  
@@ -226,7 +223,7 @@ Command	                    Results
 http://linuxcommand.org/tlcl.php or Linux Command textbook  
 
 # Linux - /tmp
-/tmp  
+`/tmp`  
 This directory contains mostly files that are required temporarily. Many programs use this to create lock files and for temporary storage of data. Do not remove files from this directory unless you know exactly what you are doing! Many of these files are important for currently running programs and deleting them may result in a system crash. Usually it won't contain more than a few KB anyway. On most systems, this directory is cleared out at boot or at shutdown by the local system.  
 
 
@@ -251,16 +248,3 @@ Q: Which command should you use to delete a directory?
 
 Q: Then, remove the directory empty_directory 
 `rmdir empty_directory`  
-
-
-
-<!-- ![l7](l7.png?raw=true "l7")
-![l7](l7.png?raw=true "l7")
-![l7](l7.png?raw=true "l7") -->
-
-
-
-
-
-
-<a href="https://www.lucidchart.com/" target="_blank">Lucid</a>  
