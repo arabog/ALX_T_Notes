@@ -289,7 +289,7 @@ Command	                    Results
 `mv dir1 ../*.bak dir2`	    Move the subdirectory dir1 and all the files ending in ".bak" in the current working directory's parent directory to an existing directory named dir2.  
 `rm *~`	                    Delete all files in the current working directory that end with the character "~". Some applications create backup files using this naming scheme. Using this command will clean them out of a directory.  
 
-http://linuxcommand.org/tlcl.php
+http://linuxcommand.org/tlcl.php or Linux Command textbook
 
 <!-- ![l7](l7.png?raw=true "l7")
 ![l7](l7.png?raw=true "l7")
