@@ -146,10 +146,80 @@ Undo is available via three different keys:
 `C-_`	Undo  
 `C-x u`	Undo  
 
-So if you need to get back to a previous buffer state, simply move the cursor (so as to break any existing sequence of undos), and press C-/ until you find what you want.  
+So if you need to get back to a previous buffer state, simply move the cursor (so as to break any existing sequence of undos), and press `C-/` until you find what you want.  
 
 ### Incremental search
+`C-s`	Incremental search  
+Typing C-s followed by some text starts incremental search. Emacs jumps to the next occurrence of whatever you have typed, as you are typing it, and all matches visible on your screen are highlighted.  
 
+Within incremental search, you can type `C-s` again at any time to jump to the next occurrence.
+When you've found what you're looking for, you can either type RET (or use almost any movement command) to exit search at the occurrence you've found, or `C-g` ("cancel") to return to where your search started. If you exit search at the found occurrence, you can easily jump back to where you started with `C-x C-x` since incremental search sets mark appropriately.
+
+These commands help you to issue previously issued queries:  
+`C-s C-s`	Search for most recently searched item
+`C-s M-p`	Previous item in search history
+`C-s M-n`	Next item in search history
+`C-h k C-s`	Guide to more commands available in incremental search
+
+You can perform a backward incremental search with `C-r`. (All the above commands can be activated similarly from within backward search.) At any time during a forward (or backward) search, you can type `C-r` `(C-s)` to switch to a backward (forward) search.  
+
+`C-r`	Backward incremental search  
+
+
+### Search and replacement
+`M-%`	Query replace  
+The query replace command, prompts you for a search string and a replacement. Then, for each match in the buffer, you can choose whether or not to replace the search string. Here are some of the options available at each prompt:  
+Type `y` to replace the current match.
+Type `n` to skip to the next match without replacing.
+Type `q` to exit without doing any more replacements.
+Type `.` to replace this match, then exit.
+Type `!` to replace all remaining matches with no more questions.
+
+### Regular expression search
+Emacs allows you to search for regular expressions:  
+`C-M-s`	Regular expression incremental search
+
+Regular expressions are a succinct way of searching for many different strings at once by using a special language to describe the form of what you're looking for. Regular expression syntax is beyond the scope of this tour.  
+
+### Regular expression search and replacement
+Regular expressions are even more powerful in search and replace, because Emacs allows the replacement text to depend on the found text. You can control replacement by inserting special escape sequences in the replacement string, and Emacs will substitute them appropriately:  
+
+When you type this
+in a replacement string:        Emacs replaces it with:  
+`\&`	                        the original found text    
+`\1, \2, etc.`	                the 1st, 2nd, etc. parenthesized subgroup in the found text  
+`\#`	                        the number of replacements done so far  
+`\?`	                        a string obtained by prompting the user on each match  
+`\,(lisp-expression …)`	        the result of evaluating an arbitrary function  
+
+Here's an example. Suppose we have a buffer containing names like this:  
+George Washington   
+John Adams   
+Thomas Jefferson   
+James Madison   
+James Monroe   
+If we run M-x replace-regexp and replace the regexp \(\w+\) \(\w+\) with \,(upcase \2), \1, our buffer now looks like this:  
+WASHINGTON, George   
+ADAMS, John   
+JEFFERSON, Thomas   
+MADISON, James   
+MONROE, James  
+
+Roughly, the search expression searches for two words; the replacement string inserts an uppercased version of the second word, followed by a comma, followed by the first word.  
+
+### Keyboard Macros
+Keyboard macros are a way to remember a fixed sequence of keys for later repetition. They're handy for automating some boring editing tasks.  
+`F3`	Start recording macro  
+`F4`	Stop recording macro  
+`F4`	Play back macro once  
+`M-5 F4`	Play back macro 5 times  
+`M-0 F4`	Play back macro over and over until it fails  
+
+For example, this sequence of keys does the exact same transformation that we did with regular expression replacement earlier, that is, it transforms a line containing George Washington to WASHINGTON, George:  
+
+`M-d C-d M-u, [SPC] C-y C-n C-a`  
+
+After we record that key sequence as a macro, we can type M-0 F4 to transform the buffer pictured earlier; in this case, Emacs runs the macro repeatedly until it has reached the end of the buffer.  
 
 
 
