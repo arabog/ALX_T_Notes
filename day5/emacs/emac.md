@@ -221,6 +221,7 @@ For example, this sequence of keys does the exact same transformation that we di
 
 After we record that key sequence as a macro, we can type M-0 F4 to transform the buffer pictured earlier; in this case, Emacs runs the macro repeatedly until it has reached the end of the buffer.  
 
+## Help with commands
 
 
 
