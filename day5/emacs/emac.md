@@ -423,5 +423,46 @@ You can ask questions on the help-gnu-emacs mailing list.
 https://lists.gnu.org/mailman/listinfo/help-gnu-emacs
 
 
+**A buffer is an object that a file’s text is held in.**  
+**What does M in a shortcut command stand for? Alt, Meta**  
+
+## Questions: Create your answer directory  
+create a directory named 0x02_emacs. mkdir 0X02_emacs
+
+## Questions: Opening  
+What is the command to open a file from within Emacs? **C-x C-f**  
+
+## Questions: Saving  
+What is the command to save a file?  
+**C-x C-s**  
+
+## Questions: Cutting  
+What is the command to cut an entire line?
+**C-x C-k**  
+
+To cut the text, press **C-w**   
+To copy the text, press **M-w** 
+
+## Questions: Pasting  
+What is the command to paste?  
+**C-x C-y**  
+
+## Questions: Searching  
+What is the command to search forward?  
+**C-s RETURN C-w**
+
+## Questions: Undoing  
+What is the command to undo?  
+**C-x u** or **C-_**  
+
+## Questions: Quitting  
+What is the command to quit Emacs? 
+C-x C-c
+
+## Questions: Starting
+Type emacs or emacs [name of file]  
+
+
+
 
 <!-- ![l12](l12.png?raw=true "l12")  -->
