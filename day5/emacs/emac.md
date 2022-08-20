@@ -222,7 +222,206 @@ For example, this sequence of keys does the exact same transformation that we di
 After we record that key sequence as a macro, we can type M-0 F4 to transform the buffer pictured earlier; in this case, Emacs runs the macro repeatedly until it has reached the end of the buffer.  
 
 ## Help with commands
+If you don't remember what a particular key or command does, you can read a description of it by using one of the following commands:  
+
+`C-h k` Shows documentation for the command associated with any particular key.  
+`C-h f` Shows documentation for any particular command, by name (i.e. what you would type after M-x).  
+
+For example, `C-h k C-s` and `C-h f isearch-forward RET` both display a page describing incremental search.  
+
+On the other hand, if you don't remember how to invoke a particular feature, you can use apropos to search for it:  
+`C-h a`  Search for commands by keywords or regexp
+
+For example, if I remember that I want to activate narrowing, but don't remember how, I can type `C-h a narrow RET` which shows a brief list of commands having to do with narrow, one of which is `M-x narrow-to-region`.  
+
+## More useful features
+#### Integration with common tools
+
+Emacs is notable for its integration with many common tools. Not only can you invoke them from within the editor, Emacs usually helps you use their output more effectively. Here are some examples:
+
+`M-x shell`  
+Starts a shell in the buffer named *shell*, switching to it if it already exists. Use C-u M-x shell to use a buffer with a different name.  
+
+`M-x compile`  
+Invokes `make` (with targets and options of your choice) and displays output in a new buffer. Emacs identifies error lines containing filenames and line numbers, and you can click on them to jump directly to the corresponding buffer and line.  
+
+`M-x gdb`  
+Invokes `gdb` in a new buffer. You can use the gdb command line as usual in that buffer. However, Emacs lets you set breakpoints directly from your source buffers and shows execution by marking the active line in your source buffers. Emacs can also display breakpoints, the stack, and locals, simultaneously and each in their own window.  
+
+`M-x grep`
+Invokes `grep` and prints results in a new buffer. Like M`-x compile`, when you click on a match, Emacs opens the correct file and takes you to the matching line.  
+
+`M-x man`
+Displays `man` pages.
+
+Here are some more assorted tools:  
+`M-x calculator`	    A simple calculator.  
+`M-x calendar`	        A calendar.  
+`M-x phases-of-moon`	Shows upcoming quarters of the moon.
+
+#### Invoking shell commands
+If you need to execute a simple shell command, these commands can save you the trouble of switching to an xterm or starting a new Emacs shell buffer:  
+
+`M-x shell-command` or `M-!`  Executes a command and displays the output in a new buffer.  
+
+`M-x shell-command-on-region` or `M-|`  Executes a command, piping in the current region as input; displays the output in a new buffer.  
+
+For either command, a `C-u` prefix will insert the output in your current buffer rather than using a temporary buffer.  
+
+### Version control
+Emacs helps you manipulate and edit files stored in version control. Emacs supports CVS, Subversion, bzr, git, hg, and other systems, but it offers a uniform interface, called VC, regardless of the version control system you are using.  
+
+Emacs automatically detects when a file you're editing is under version control, and displays something like this in the mode line: `CVS-1.14` to indicate the version control system in use, and the current version.  
+
+`M-x vc-next-action` or `C-x v v` commits the current file (prompting you for a log message) if you've modified it. (Under version control systems that require locking, this command also acquires a lock for you.)  
+
+VC provides other commands for version control-related tasks:  
+`C-x v =` Displays a diff, showing the changes you've made to the current file.  
+
+`C-x v ~` Prompts you for a version number and shows you that version of the current file in another window. 
+
+`C-x v g` Displays an annotated version of the file. it shows, for each line, the commit where that line was last changed and by whom. On any line you can press L to view the log message for that commit or D to view the associated diff.  
+
+`C-x v l` Displays a log of previous changes to the file. When the cursor is on a particular log entry, you can press d to view the diff associated with that change or f to view that version of the file.  
+
+### Editing remote files
+
+Emacs can edit remote files transparently (as if they were local) using a feature called Tramp. Whenever Emacs asks for a file, you can indicate a remote file like so: /myname@remotehost:/remote/path/to/file. Emacs retrieves the file over SSH, FTP, or another method and takes care of saving it when you're done. With Tramp you can edit files on different computers using a single Emacs session, even if Emacs is not installed on the remote side.  
+
+You can also use Tramp to edit local files with another user's permissions. You can edit files with root privileges via sudo: `/sudo::/etc/file`, or via `su: /root@localhost:/etc/file`.  
+
+### Emacs server
+Some people like to keep only a single instance of Emacs open and edit all their files in there. Doing this has a few advantages:  
+
+You can kill/yank text between buffers in the same instance of Emacs.
+Emacs remembers argument histories (what commands you've used, what files you've opened, terms you've searched for, etc.), but only within each instance.
+If you have many customizations, starting new instances of Emacs is slow.
+Alas, when you type `emacs` in a shell to edit a file (or when `$EDITOR` is invoked by an external program), a new instance of Emacs is started. You can avoid this by using `emacsclient`, which instead opens a new frame connected to an existing instance of Emacs:  
+
+In your existing instance of Emacs, type M-x server-start. Or add (server-start) to your .emacs file to make it do that automatically at startup.  
+To edit a file, type emacsclient -t FILENAME at a prompt. You can also change your $EDITOR to emacsclient -t if you're using programs that automatically invoke $EDITOR. (emacsclient -t opens a new frame on the terminal; alternatively, emacsclient -c opens a new X frame.)    
+When you're done editing, type C-x C-c, which closes the frame 
+
+### Being unproductive with Emacs
+Emacs even comes with diversions:  
+`M-x tetris`	Tetris  
+`M-x hanoi`	Towers of Hanoi game  
+`M-x doctor`	Emacs psychotherapist  
+
+
+## Common Emacs concepts
+### Prefix arguments
+As we've seen, prefix arguments are sometimes used to indicate repetition:  
+`C-u 10 C-f`	Forward 10 characters
+`C-u M-a`	Backward 4 sentences
+
+We've also seen a prefix argument used to modify the following command (the numeric argument, if provided, is ignored):  
+`M-x shell`	Create or switch to shell buffer named *shell*
+`C-u M-x shell`	Create or switch to shell buffer with specified name
+
+If you ever get confused, the documentation for any command (accessible with `C-h f` or `C-h k`) describes the effect of the prefix argument, if any.  
+
+### Major modes
+Every buffer has an associated major mode, which alters certain behaviors, key bindings, and text display in that buffer. The idea is to customize the appearance and features available based on the contents of the buffer.  
+
+Emacs ships with dozens of major modes for editing widely used programming languages, markup languages, and configuration file formats. These major modes tell Emacs how to:  
+Indent your code correctly (usually, simply pressing `TAB` once will make Emacs indent the current line correctly).  
+Do syntax highlighting  
+Identify the boundaries of functions  
+Invoke interpreters, compilers, or debuggers for your code.  
+
+Some commands we've seen, like M-x dired, M-x compile, and M-x shell, in fact use their own special major modes to make their buffers provide certain features (such as highlighting compile errors and making them clickable).  
+
+
+You can switch modes in an existing buffer by using M-x and the name of the mode:
+
+`M-x java-mode`	Mode for editing Java files
+`M-x python-mode`	Mode for editing Python files
+`M-x text-mode`	Mode for editing text files
+`M-x fundamental-mode`	Mode with no specializations at all
+
+Emacs is very good at determining the right mode to use when you open a file, so you'll rarely have to use the above commands.
+
+These are examples of the commands provided by language major modes:  
+Language	    Some special commands available  
+Lisp	        Manipulate s-exps in various ways; execute expressions  
+Python	        Indent, unindent blocks; run code in Python shell  
+HTML	        Insert and close tags; preview in browser  
+
+In almost all cases, major modes for unsupported formats are available as extension packages. You can find many of them on EmacsWiki.  
+https://www.emacswiki.org/  
+
+### Minor modes
+Every buffer can also have any number of minor modes, which are extra pieces of functionality you can enable, independently of each other and of the major mode.   
+
+Here are a few commonly used ones:
+
+`M-x auto-fill-mode` Wraps your lines automatically when they get longer than 70 characters.  
+
+`M-x flyspell-mode` Highlights misspelled words as you type.  
+
+`M-x follow-mode` If you have a buffer displayed in two windows side by side, follow-mode forces them to scroll together such that the text displayed in the second window comes right after the text in the first window, and moving your cursor off the bottom of the left window causes it to appear at the top of the right window.  
+
+Some minor modes are global, i.e. they affect the behavior of the entire editor, rather than just that of a specific buffer.  
+`M-x icomplete-mode` In the M-x prompt (and elsewhere), show completions as you type.  
+`M-x iswitchb-mode` Show all buffer names when you switch buffers with C-x b.  
+
+If you need help with a particular mode, `C-h m` describes the active major and minor modes. The mode description often lists important commands which are useful in that mode, which is helpful when you're learning to use a new mode.
+
+### The minibuffer
+The minibuffer (the space at the bottom of the frame) is where Emacs prompts you for input in most situations: for a command, when you type M-x; for a file name, within M-x find-file; for an Elisp expression, within M-x eval-expression, etc. Here are some features common to most minibuffer prompts:  
+
+You can use most buffer editing and movement co  mmands. You can move around in, kill text from, and yank text to minibuffers.
+You can browse previous inputs to the current prompt using M-p and M-n.
+Tab completion is often available. For example, the M-x prompt offers tab completion, so you needn't worry about typing long command names like `M-x wdired-change-to-wdired-mode` when `M-x wdired-ch TAB` suffices.
+
+
+## Tips for beginners
+In the event of an emergency…  
+Here's what to do if you've accidentally pressed a wrong key:  
+If you executed a command and Emacs has modified your buffer, use `C-/` to undo that change.  
+If you pressed a prefix key (e.g. C-x) or you invoked a command which is now prompting you for input (e.g. Find file: …), type `C-g`, repeatedly if necessary, to cancel.
+`C-g` also cancels a long-running operation if it appears that Emacs has frozen.  
+
+
+### Keyboard and terminal setup  
+Some Emacs users remap their Caps Lock key to act as an additional Ctrl key, because it is easier to reach.    
+Due to your keyboard or terminal configuration, you may find that some keys seem to do the wrong thing:  
+If your `DEL` key is not working (sometimes, typing `DEL` brings up a help screen, as if you typed `C-h`), try `M-x normal-erase-is-backspace-mode`.  
+
+If your meta key is not working, in order to type a key that contains meta, you can instead type `ESC`, then the remaining keys. For example, `ESC x is` the same as `M-x`, and `ESC C-s` is the same as `C-M-s`.
+
+### Frequently asked questions
+Emacs comes with a FAQ which explains how to perform many commonly requested tasks; press C-h C-f to read it.  
+
+### Migrating to Emacs
+Emacs has a number of options for easing the transition from other editing environments.  
+
+#### Emacs for Windows users
+In Windows, the bread and butter editing commands are C-z, C-x, C-c, and C-v. Unfortunately, these keys are frequently used in Emacs for other purposes (suspend, prefix key, prefix key, and next page). You can get those keys back for Undo, Cut, Copy, and Paste by turning on "CUA mode" from the Options menu. CUA mode also lets you make a selection by using Shift in combination with movement keys, as you would do on Windows. 
+
+Since C-x and C-c are so integral to Emacs operation (they are prefix keys for many commands), CUA mode only binds C-x and C-c to Cut and Copy, respectively, when you have selected some text.  
+
+You can learn more about CUA mode by typing `C-h f cua-mode RET`.  
+
+#### Emacs for vi/vim users  
+Viper (M-x viper-mode) is a set of modes for emulating vi editing behavior in Emacs. It provides different levels of vi-adherence, depending on how vi-like you want your Emacs to be.  
+
+
+## Emacs resources
+The GNU Emacs Manual (C-h r) is the definitive guide if you want to learn more about Emacs. Some Emacs features have their own, separate manuals (C-h i d).
+https://www.gnu.org/software/emacs/manual/emacs.html  
+https://www.gnu.org/software/emacs/manual/
+
+The GNU Emacs FAQ (C-h C-f) answers many questions that beginners have about how Emacs works and how to set it up to do particular things.
+https://www.gnu.org/software/emacs/manual/efaq.html  
+
+EmacsWiki contains information about many downloadable Emacs extensions, as well as tips for using and customizing Emacs.  
+https://www.emacswiki.org/  
+
+You can ask questions on the help-gnu-emacs mailing list.  
+https://lists.gnu.org/mailman/listinfo/help-gnu-emacs
 
 
 
-![l12](l12.png?raw=true "l12") 
+<!-- ![l12](l12.png?raw=true "l12")  -->
