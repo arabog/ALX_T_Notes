@@ -1,6 +1,55 @@
-# Linux Navigation
-<a href="http://linuxcommand.org/lc3_lts0020.php" target="_blank">Linux Navigation</a>  
- 
+# LEARNING THE SHELL
+<a href="http://linuxcommand.org/lc3_learning_the_shell.php" target="_blank">Shell</a>  
+
+## Why Bother?
+Why do you need to learn the command line anyway? Well, let me tell you a story. Many years ago we had a problem where I worked. There was a shared drive on one of our file servers that kept getting full.  
+But the server kept getting full and it stopped people from working. One of our software engineers spent a couple of hours writing a C++ program that would look through all the user's directories and add up the space they were using and make a listing of the results. Since I was forced to use the legacy OS while I was on the job, I installed a Linux-like command line environment for it. When I heard about the problem, I realized I could perform this task with this single line:
+```
+du -s * | sort -nr > $HOME/user_space_report.txt
+```
+Graphical user interfaces (GUIs) are helpful for many tasks, but they are not good for all tasks. I have long felt that most computers today are not powered by electricity. They instead seem to be powered by the "pumping" motion of the mouse. Computers were supposed to free us from manual labor, but how many times have you performed some task you felt sure the computer should be able to do but you ended up doing the work yourself by tediously working the mouse? Pointing and clicking, pointing and clicking.  
+
+## What is "the Shell"?
+Simply put, the shell is a program that takes commands from the keyboard and gives them to the operating system to perform. In the old days, it was the only user interface available on a Unix-like system such as Linux. Nowadays, we have graphical user interfaces (GUIs) in addition to command line interfaces (CLIs) such as the shell.
+
+On most Linux systems a program called **bash** (which stands for Bourne Again SHell, an enhanced version of the original Unix shell program, **sh**, written by Steve Bourne) acts as the shell program. Besides bash, there are other shell programs available for Linux systems. These include: **ksh**, **tcsh** and **zsh**.  
+
+### What's a "Terminal?"
+It's a program called a terminal emulator. This is a program that opens a window and lets you interact with the shell. There are a bunch of different terminal emulators we can use. Some Linux distributions install several. These might include **gnome-terminal**, **konsole**, **xterm**, **rxvt**, **kvt**, **nxterm**, and **eterm**.  
+
+### Starting a Terminal
+```
+Mac OS X	ctrl-cmd-t
+Windows	ctrl-alt-t
+Linux	ctrl-alt-t
+```
+### Testing the Keyboard
+OK, let's try some typing. Bring up a terminal window. The first thing we should see is a shell prompt that contains our user name and the name of the machine followed by a dollar sign. Something like this:
+```
+[me@linuxbox me]$
+```
+Excellent! Now type some nonsense characters and press the enter key.
+```
+[me@linuxbox me]$ kdkjflajfks
+```
+If all went well, we should have gotten an error message complaining that it cannot understand the command:  
+```
+[me@linuxbox me]$ kdkjflajfks
+bash: kdkjflajfks: command not found
+```
+Wonderful! Now press the up-arrow key. Watch how our previous command `"kdkjflajfks"` returns. Yes, we have command history. Press the down-arrow and we get the blank line again.  
+
+Recall the `"kdkjflajfks"` command using the up-arrow key if needed. Now, try the left and right-arrow keys. We can position the text cursor anywhere in the command line. This allows us to easily correct mistakes.   
+
+```
+You're not operating as root, are you?
+If the last character of your shell prompt is # rather than $, you are operating as the superuser. This means that you have administrative privileges. This can be dangerous, since you are able to delete or overwrite any file on the system. Unless you absolutely need administrative privileges, do not operate as the superuser.
+```
+### Using the Mouse
+Even though the shell is a command line interface, the mouse is still handy.  
+Besides using the mouse to scroll the contents of the terminal window, we can can use it to copy text.  
+
+## Linux Navigation
 In this lesson, we will introduce our first three commands:   
 `pwd` (print working directory),   
 `cd` (change directory), and  
