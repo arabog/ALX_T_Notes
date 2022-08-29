@@ -119,20 +119,20 @@ ls -la ..	                List all files (even ones with names beginning with a 
 
 Most commands operate like this: `command -options arguments` where command is the name of the command, -options is one or more adjustments to the command's behavior, and arguments is one or more "things" upon which the command operates.  
 
-In the case of ls, we see that ls is the name of the command, and that it can have one or more options, such as -a and -l, and it can operate on one or more files or directories.  
+In the case of `ls`, we see that `ls` is the name of the command, and that it can have one or more options, such as -a and -l, and it can operate on one or more files or directories.  
 
 ## A Closer Look at Long Format
-If we use the -l option with ls, you will get a file listing that contains a wealth of information about the files being listed.  
+If we use the `-l` option with `ls`, you will get a file listing that contains a wealth of information about the files being listed.  
 ![l9](l9.png?raw=true "l9")
 
 ![l8](l8.png?raw=true "l8")
 
-*File Name* The name of the file or directory.  
-*Modification Time* The last time the file was modified. If the last modification occurred more than six months in the past, the date and year are displayed. Otherwise, the time of day is shown.  
-*Size* The size of the file in bytes.  
-*Group*  The name of the group that has file permissions in addition to the file's owner.  
-*Owner* The name of the user who owns the file.  
-*File Permissions* A representation of the file's access permissions. The first character is the type of file. A "-" indicates a regular (ordinary) file. A "d" indicates a directory. The second set of three characters represent the read, write, and execution rights of the file's owner. The next three represent the rights of the file's group, and the final three represent the rights granted to everybody else.  
+**File Name** &emsp; The name of the file or directory.  
+**Modification Time** &emsp; The last time the file was modified. If the last modification occurred more than six months in the past, the date and year are displayed. Otherwise, the time of day is shown.  
+**Size** &emsp; The size of the file in bytes.  
+**Group** &emsp;  The name of the group that has file permissions in addition to the file's owner.  
+**Owner** &emsp; The name of the user who owns the file.  
+**File Permissions** &emsp; A representation of the file's access permissions. The first character is the type of file. A "-" indicates a regular (ordinary) file. A "d" indicates a directory. The second set of three characters represent the read, write, and execution rights of the file's owner. The next three represent the rights of the file's group, and the final three represent the rights granted to everybody else.  
 
 ### less
 less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable. 
