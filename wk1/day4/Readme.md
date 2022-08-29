@@ -232,16 +232,15 @@ Command	    &emsp;&emsp;&emsp;     Results
 `mv dir1 dir2`	&emsp;&emsp;&emsp;      If dir2 does not exist, then dir1 is renamed dir2. If dir2 exists, the directory dir1 is moved within directory dir2.  
 
 ## rm
-The rm command removes (deletes) files and directories.  
-`rm file...`  
+The `rm` command removes (deletes) files and directories. `rm file...`  
 
 Using the recursive option (-r), rm can also be used to delete directories:  
 `rm -r directory...`  
 
-Command	                Results   
-`rm file1 file2`	    Delete file1 and file2.  
-`rm -i file1 file2`	    Like above however, since the "-i" (interactive) option is specified, the user is prompted before each file is deleted.  
-`rm -r dir1 dir2`	    Directories dir1 and dir2 are deleted along with all of their contents.  
+Command	 &emsp;&emsp;&emsp;  Results   
+`rm file1 file2` &emsp;&emsp;&emsp;	    Delete file1 and file2.  
+`rm -i file1 file2` &emsp;&emsp;&emsp;	    Like above however, since the "-i" (interactive) option is specified, the user is prompted before each file is deleted.  
+`rm -r dir1 dir2` &emsp;&emsp;&emsp;	    Directories dir1 and dir2 are deleted **along with all of their contents**.  
 
 # Be careful with rm!
 Linux does not have an undelete command. Once you delete something with rm, it's gone. You can inflict terrific damage on your system with rm if you are not careful, particularly with wildcards.  
