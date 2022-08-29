@@ -207,7 +207,7 @@ The cp program copies files and directories. **cp file1 file2**
 It can also be used to copy multiple files (and/or directories) to a different directory: **cp file... directory**    
 
 A note on notation: `...` signifies that an item can be repeated one or more times. e.g **cp file1 file2 file3 directory**     
-if u r copying a directory too, **cp -r [file1 dir1 file2 file3] [directory**  
+if u r copying a directory too, **cp -r [file1 dir1 file2 file3] directory**  
 
 ![l12](l12.png?raw=true "l12") 
 
@@ -228,14 +228,13 @@ To move files (and/or directories) to a different directory:
 Command	    &emsp;&emsp;&emsp;     Results  
 `mv file1 file2`	&emsp;&emsp;&emsp;      If file2 does not exist, then file1 is renamed file2. If file2 exists, its contents are silently replaced with the contents of file1.  
 `mv -i file1 file2`	 &emsp;&emsp;&emsp;   Like above however, since the "-i" (interactive) option is specified, if file2 exists, the user is prompted before it is overwritten with the contents of file1.  
-`mv file1 file2 dir1`	&emsp;&emsp;&emsp;   The files file1 and file2 are moved to directory dir1. If dir1 does not exist, mv will exit with an error.  
+`mv file1 file2 dir1`	&emsp;&emsp;&emsp;   The files file1 and file2 are moved to directory dir1. **If dir1 does not exist, mv will exit with an error**.  
 `mv dir1 dir2`	&emsp;&emsp;&emsp;      If dir2 does not exist, then dir1 is renamed dir2. If dir2 exists, the directory dir1 is moved within directory dir2.  
 
 ## rm
 The `rm` command removes (deletes) files and directories. `rm file...`  
 
-Using the recursive option (-r), rm can also be used to delete directories:  
-`rm -r directory...`  
+Using the recursive option (**-r**), `rm` can also be used to delete directories: `rm -r directory...`  
 
 Command	 &emsp;&emsp;&emsp;  Results   
 `rm file1 file2` &emsp;&emsp;&emsp;	    Delete file1 and file2.  
@@ -243,21 +242,20 @@ Command	 &emsp;&emsp;&emsp;  Results
 `rm -r dir1 dir2` &emsp;&emsp;&emsp;	    Directories dir1 and dir2 are deleted **along with all of their contents**.  
 
 # Be careful with rm!
-Linux does not have an undelete command. Once you delete something with rm, it's gone. You can inflict terrific damage on your system with rm if you are not careful, particularly with wildcards.  
+Linux does not have an undelete command. Once you delete something with `rm`, it's gone. You can inflict terrific damage on your system with `rm` if you are not careful, particularly with wildcards.  
 
 Before you use `rm` with wildcards, try this helpful trick: construct your command using `ls` instead. By doing this, you can see the effect of your wildcards before you delete files.  
 
 ## mkdir
-The `mkdir` command is used to create directories.   
-`mkdir directory...`
+The `mkdir` command is used to create directories: `mkdir directory...`
 
 Using Commands with Wildcards  
 Since the commands we have covered here accept multiple file and directories names as arguments, you can use wildcards to specify them. Here are a few examples:  
 
-Command	                    Results  
-`cp *.txt text_files`	    Copy all files in the current working directory with names ending with the characters ".txt" to an existing directory named text_files.  
-`mv dir1 ../*.bak dir2`	    Move the subdirectory dir1 and all the files ending in ".bak" in the current working directory's parent directory to an existing directory named dir2.  
-`rm *~`	                    Delete all files in the current working directory that end with the character "~". Some applications create backup files using this naming scheme. Using this command will clean them out of a directory.  
+Command	 &emsp;&emsp;&emsp;  Results  
+`cp *.txt text_files` &emsp;&emsp;&emsp; Copy all files in the current working directory with names ending with the characters ".txt" to an existing directory named text_files.  
+`mv dir1 ../*.bak dir2`	&emsp;&emsp;&emsp;   Move the subdirectory dir1 and all the files ending in ".bak" in the current working directory's parent directory to an existing directory named dir2.  
+`rm *~`	 &emsp;&emsp;&emsp;    Delete all files in the current working directory that end with the character "~". Some applications create backup files using this naming scheme. Using this command will clean them out of a directory.  
 
 http://linuxcommand.org/tlcl.php or Linux Command textbook  
 
