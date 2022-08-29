@@ -191,7 +191,7 @@ Wildcard  &emsp;&emsp;&emsp;  Meaning
 
 Using wildcards, it is possible to construct very sophisticated selection criteria for filenames. Here are some examples of patterns and what they match:  
 
-Pattern	                    Matches  
+Pattern	    &emsp;&emsp;&emsp;  Matches  
 `*`	&emsp;&emsp;&emsp;      All filenames  
 `g*` &emsp;&emsp;&emsp;     All filenames that begin with the character "g"  
 `b*.txt` &emsp;&emsp;&emsp; All filenames that begin with the character "b" and end with the characters ".txt"  
