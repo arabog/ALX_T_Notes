@@ -193,8 +193,8 @@ Using wildcards, it is possible to construct very sophisticated selection criter
 
 Pattern	    &emsp;&emsp;&emsp;  Matches  
 `*`	&emsp;&emsp;&emsp;      All filenames  
-`g*` &emsp;&emsp;&emsp;     All filenames that begin with the character "g"  
-`b*.txt` &emsp;&emsp;&emsp; All filenames that begin with the character "b" and end with the characters ".txt"  
+`g*` &emsp;&emsp;&emsp;     All filenames that begin with the character **"g"**  
+`b*.txt` &emsp;&emsp;&emsp; All filenames that begin with the character **"b"** and end with the characters **".txt"**  
 `Data???`&emsp;&emsp;&emsp; Any filename that begins with the characters "Data" followed by exactly 3 more characters  
 `[abc]*` &emsp;&emsp;&emsp; Any filename that begins with "a" or "b" or "c" followed by any other characters  
 `[[:upper:]]*` &emsp;&emsp;&emsp; Any filename that begins with an uppercase letter. This is an example of a character class.   
@@ -202,23 +202,21 @@ Pattern	    &emsp;&emsp;&emsp;  Matches
 `*[![:lower:]]`	 &emsp;&emsp;&emsp; Any filename that does not end with a lowercase letter.  
 
 ## cp
-The cp program copies files and directories.   
-`cp file1 file2`  
+The cp program copies files and directories. **cp file1 file2**    
 
-It can also be used to copy multiple files (and/or directories) to a different directory:  
-`cp file... directory`  
+It can also be used to copy multiple files (and/or directories) to a different directory: **cp file... directory**    
 
-A note on notation: `...` signifies that an item can be repeated one or more times. e.g `cp file1 file2 file3 directory`   
-if u r copying a directory too, `cp -r file1 dir1 file2 file3 directory`
+A note on notation: `...` signifies that an item can be repeated one or more times. e.g **cp file1 file2 file3 directory**     
+if u r copying a directory too, **cp -r [file1 dir1 file2 file3] [directory**  
 
 ![l12](l12.png?raw=true "l12") 
 
 Other useful examples of cp and its options include:  
-Command	                Results  
-`cp file1 file2`	    Copies the contents of file1 into file2. If file2 does not exist, it is created; otherwise, file2 is silently overwritten with the contents of file1.  
-`cp -i file1 file2`	    Like above however, since the "-i" (interactive) option is specified, if file2 exists, the user is prompted before it is overwritten with the contents of file1.  
-`cp file1 dir1`	        Copy the contents of file1 (into a file named file1) inside of directory dir1.  
-`cp -R dir1 dir2`	    Copy the contents of the directory dir1. If directory dir2 does not exist, it is created. Otherwise, it creates a directory named dir1 within directory dir2.  
+Command	 &emsp;&emsp;&emsp;    Results  
+`cp file1 file2`	&emsp;&emsp;&emsp;    Copies the contents of file1 into file2. If file2 does not exist, it is created; otherwise, file2 is silently overwritten with the contents of file1.  
+`cp -i file1 file2`	 &emsp;&emsp;&emsp;   Like above however, since the "-i" (interactive) option is specified, if file2 exists, the user is prompted before it is overwritten with the contents of file1.  
+`cp file1 dir1`	  &emsp;&emsp;&emsp;      Copy the contents of file1 (into a file named file1) inside of directory dir1.  
+`cp -R dir1 dir2`	&emsp;&emsp;&emsp;    Copy the contents of the directory dir1. If directory dir2 does not exist, it is created. Otherwise, it creates a directory named dir1 within directory dir2.  
 
 ## mv
 The mv command *moves or renames* files and directories depending on how it is used. It will either move one or more files to a different directory, or it will rename a file or directory. To rename a file, it is used like this:  
