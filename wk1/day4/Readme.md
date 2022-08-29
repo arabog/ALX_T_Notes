@@ -177,7 +177,7 @@ These five commands are among the most frequently used Linux commands. They are 
 ## Wildcards
 Before we begin with our commands, we'll first look at a shell feature that makes these commands so powerful. Since the shell uses filenames so much, it provides special characters to help you rapidly specify groups of filenames. These special characters are called `wildcards`. *Wildcards allow you to select filenames based on patterns of characters.*  
 
-Wildcard	                Meaning  
+Wildcard  &emsp;&emsp;&emsp;  Meaning  
 `*`	   &emsp;               Matches any characters  
 `?`	   &emsp;               Matches any single character  
 `[characters]`	&emsp;      Matches any character that is a member of the set characters. The set of characters may also be expressed as a POSIX character class such as one of the following:  
