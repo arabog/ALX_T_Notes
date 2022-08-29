@@ -29,7 +29,7 @@ Type emsp to add 4 spaces. -->
 
 ## Commands
 Here is the (non-exhaustive) list of commands & concepts you should master to be verbose with Unix systems:  
-```
+
 **awk** # &emsp; pattern scanning and processing language  
 **basename** # &emsp; strip directory and suffix from filenames  
 **bg** # &emsp; resumes suspended jobs without bringing them to the foreground  
@@ -95,11 +95,11 @@ Here is the (non-exhaustive) list of commands & concepts you should master to be
 **>** # &emsp; redirect standard output  
 **<** # &emsp; redirect standard input  
 **&** # &emsp; send process to background  
-```
+
 
 ## Shortcuts
 Some handy shortcuts:
-```
+
 **CTRL+A** # &emsp; go to beginning of line  
 **CTRL+B** # &emsp; moves backward one character  
 **CTRL+C** # &emsp; stops the current command  
@@ -116,4 +116,3 @@ Some handy shortcuts:
 **CTRL+W** # &emsp; kills the word behind the cursor  
 **CTRL+Y** # &emsp; retrieves last deleted string  
 **CTRL+Z** # &emsp; stops the current command, resume with fg in the foreground or bg in the background  
-```
