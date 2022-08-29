@@ -132,10 +132,11 @@ If we use the `-l` option with `ls`, you will get a file listing that contains a
 **Size** &emsp; The size of the file in bytes.  
 **Group** &emsp;  The name of the group that has file permissions in addition to the file's owner.  
 **Owner** &emsp; The name of the user who owns the file.  
-**File Permissions** &emsp; A representation of the file's access permissions. The first character is the type of file. A "-" indicates a regular (ordinary) file. A "d" indicates a directory. The second set of three characters represent the read, write, and execution rights of the file's owner. The next three represent the rights of the file's group, and the final three represent the rights granted to everybody else.  
+**File Permissions** &emsp; A representation of the file's access permissions. The first character is the type of file. A **"-"** indicates a regular (ordinary) file. A **"d"** indicates a directory. The second set of three characters represent the **rwx, read, write, and execution** rights of the file's owner. The next three represent the rights of the file's group, and the final three represent the rights granted to everybody else.  
 
 ### less
-less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable. 
+**less** is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.  
+ 
 ![l11](l11.png?raw=true "l11") 
 
 ### What is "text"?
