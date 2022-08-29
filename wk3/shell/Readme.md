@@ -29,72 +29,71 @@ Type emsp to add 4 spaces. -->
 
 ## Commands
 Here is the (non-exhaustive) list of commands & concepts you should master to be verbose with Unix systems:  
-```
-awk # &emsp; pattern scanning and processing language
-basename # &emsp; strip directory and suffix from filenames
-bg # &emsp; resumes suspended jobs without bringing them to the foreground
-cat # &emsp; print files
-cd # &emsp; change the shell working directory.
-chmod # &emsp; change file mode
-chown # &emsp; change file owner and group
-crontab # &emsp; maintain crontab files
-curl # &emsp; transfer a URL
-cut # &emsp; remove sections from each line of files
-date # &emsp; display or set date and time
-dig # &emsp; DNS lookup utility
-df # &emsp; report file system disk space usage
-diff # &emsp; compare files line by line
-du # &emsp; estimate file space usage
-echo # &emsp; display a line of text
-find # &emsp; search for files in a directory hierarchy
-fg # &emsp; resumes suspended jobs and bring them to the foreground
-grep # &emsp; print lines matching a pattern
-kill # &emsp; send a signal to a process
-less # &emsp; read file with pagination
-ln # &emsp; create links
-ls # &emsp; list directory contents
-lsb_release # &emsp; print distribution-specific information
-lsof # &emsp; list open files
-mkdir # &emsp; create
-mv # &emsp; move files
-nc # &emsp; arbitrary TCP and UDP connections and listens
-netstat # &emsp; print network connections, routing tables, interface statistics...
-nice # &emsp; execute a utility with an altered scheduling priority
-nproc # &emsp; print the number of processing units available
-passwd # &emsp; change user password
-pgrep # &emsp; look up processes based on name and other attributes
-pkill # &emsp; send signal to processes based on name and other attributes
-printenv # &emsp; print all or part of environment
-pwd # &emsp; print name of current/working directory
-top # &emsp; display Linux processes
-tr # &emsp; translate or delete characters
-ps # &emsp; report a snapshot of the current processes
-rm # &emsp; remove files or directories
-rmdir # &emsp; remove directories
-rsync # &emsp; remote file copy
-scp # &emsp; secure copy (remote file copy program)
-sed # &emsp; stream editor for filtering and transforming text
-sleep # &emsp; suspend execution for an interval of time
-sort # &emsp; sort lines of text file
-ssh # &emsp; OpenSSH SSH client (remote login program)
-ssh-keygen # &emsp; SSH key generation, management and conversion
-su # &emsp; substitute user identity
-sudo # &emsp; execute a command as another user
-tail # &emsp; output the last part of files
-tar # &emsp; manipulate archives files
-tr # &emsp; translate or delete characters
-uname # &emsp; Print operating system name
-uniq # &emsp; report or omit repeated lines
-uptime # &emsp; show how long system has been running
-w # &emsp; Show who is logged on and what they are doing
-whereis # &emsp; locate the binary, source, and manual page files for a command
-which # &emsp; locate a command
-wc # &emsp; print newline, word, and byte counts for each file
-xargs # &emsp; build and execute command lines from standard input
-| # &emsp; redirect standard output to another command
-> # &emsp; redirect standard output
-< # &emsp; redirect standard input
-& # &emsp; send process to background
+**awk** # &emsp; pattern scanning and processing language  
+**basename** # &emsp; strip directory and suffix from filenames  
+**bg** # &emsp; resumes suspended jobs without bringing them to the foreground  
+**cat** # &emsp; print files  
+**cd** # &emsp; change the shell working directory.  
+**chmod** # &emsp; change file mode  
+**chown** # &emsp; change file owner and group  
+**crontab** # &emsp; maintain crontab files  
+**curl** # &emsp; transfer a URL  
+**cut** # &emsp; remove sections from each line of files  
+**date** # &emsp; display or set date and time  
+**dig** # &emsp; DNS lookup utility  
+**df** # &emsp; report file system disk space usage  
+**diff** # &emsp; compare files line by line  
+**du** # &emsp; estimate file space usage  
+**echo** # &emsp; display a line of text  
+**find** # &emsp; search for files in a directory hierarchy  
+**fg** # &emsp; resumes suspended jobs and bring them to the foreground  
+**grep** # &emsp; print lines matching a pattern  
+**kill** # &emsp; send a signal to a process  
+**less** # &emsp; read file with pagination  
+**ln** # &emsp; create links  
+**ls** # &emsp; list directory contents  
+**lsb_release** # &emsp; print distribution-specific information  
+**lsof** # &emsp; list open files  
+**mkdir** # &emsp; create  
+**mv** # &emsp; move files  
+**nc** # &emsp; arbitrary TCP and UDP connections and listens  
+**netstat** # &emsp; print network connections, routing tables, interface statistics...  
+**nice** # &emsp; execute a utility with an altered scheduling priority  
+**nproc** # &emsp; print the number of processing units available  
+**passwd** # &emsp; change user password  
+**pgrep** # &emsp; look up processes based on name and other attributes  
+**pkill** # &emsp; send signal to processes based on name and other attributes  
+**printenv** # &emsp; print all or part of environment  
+**pwd** # &emsp; print name of current/working directory  
+**top** # &emsp; display Linux processes  
+**tr** # &emsp; translate or delete characters  
+**ps** # &emsp; report a snapshot of the current processes  
+**rm** # &emsp; remove files or directories  
+**rmdir** # &emsp; remove directories  
+**rsync** # &emsp; remote file copy  
+**scp** # &emsp; secure copy (remote file copy program)  
+**sed** # &emsp; stream editor for filtering and transforming text  
+**sleep** # &emsp; suspend execution for an interval of time  
+**sort** # &emsp; sort lines of text file  
+**ssh** # &emsp; OpenSSH SSH client (remote login program)  
+ssh-**keygen** # &emsp; SSH key generation, management and conversion  
+**su** # &emsp; substitute user identity  
+**sudo** # &emsp; execute a command as another user  
+**tail** # &emsp; output the last part of files  
+**tar** # &emsp; manipulate archives files  
+**tr** # &emsp; translate or delete characters  
+**uname** # &emsp; Print operating system name  
+**uniq** # &emsp; report or omit repeated lines  
+**uptime** # &emsp; show how long system has been running  
+**w** # &emsp; Show who is logged on and what they are doing  
+**whereis** # &emsp; locate the binary, source, and manual page files for a command  
+**which** # &emsp; locate a command  
+**wc** # &emsp; print newline, word, and byte counts for each file  
+**xargs** # &emsp; build and execute command lines from standard input  
+**|** # &emsp; redirect standard output to another command  
+**>** # &emsp; redirect standard output  
+**<** # &emsp; redirect standard input  
+**&** # &emsp; send process to background  
 ```
 
 ## Shortcuts
