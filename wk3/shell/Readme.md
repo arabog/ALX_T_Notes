@@ -29,6 +29,7 @@ Type emsp to add 4 spaces. -->
 
 ## Commands
 Here is the (non-exhaustive) list of commands & concepts you should master to be verbose with Unix systems:  
+```
 **awk** # &emsp; pattern scanning and processing language  
 **basename** # &emsp; strip directory and suffix from filenames  
 **bg** # &emsp; resumes suspended jobs without bringing them to the foreground  
@@ -76,7 +77,7 @@ Here is the (non-exhaustive) list of commands & concepts you should master to be
 **sleep** # &emsp; suspend execution for an interval of time  
 **sort** # &emsp; sort lines of text file  
 **ssh** # &emsp; OpenSSH SSH client (remote login program)  
-ssh-**keygen** # &emsp; SSH key generation, management and conversion  
+**ssh-keygen** # &emsp; SSH key generation, management and conversion  
 **su** # &emsp; substitute user identity  
 **sudo** # &emsp; execute a command as another user  
 **tail** # &emsp; output the last part of files  
@@ -99,20 +100,20 @@ ssh-**keygen** # &emsp; SSH key generation, management and conversion
 ## Shortcuts
 Some handy shortcuts:
 ```
-CTRL+A # &emsp; go to beginning of line
-CTRL+B # &emsp; moves backward one character
-CTRL+C # &emsp; stops the current command
-CTRL+D # &emsp; deletes one character backward or logs out of current session
-CTRL+E # &emsp; go to end of line
-CTRL+F # &emsp; moves forward one character
-CTRL+G # &emsp; aborts the current editing command and ring the terminal bell
-CTRL+K # &emsp; deletes (kill) forward to end of line
-CTRL+L # &emsp; clears screen and redisplay the line
-CTRL+N # &emsp; next line in command history
-CTRL+R # &emsp; searches in your command history
-CTRL+T # &emsp; transposes two characters
-CTRL+U # &emsp; kills backward to the beginning of line
-CTRL+W # &emsp; kills the word behind the cursor
-CTRL+Y # &emsp; retrieves last deleted string
-CTRL+Z # &emsp; stops the current command, resume with fg in the foreground or bg in the background
+**CTRL+A** # &emsp; go to beginning of line  
+**CTRL+B** # &emsp; moves backward one character  
+**CTRL+C** # &emsp; stops the current command  
+**CTRL+D** # &emsp; deletes one character backward or logs out of current session  
+**CTRL+E** # &emsp; go to end of line  
+**CTRL+F** # &emsp; moves forward one character  
+**CTRL+G** # &emsp; aborts the current editing command and ring the terminal bell  
+**CTRL+K** # &emsp; deletes (kill) forward to end of line  
+**CTRL+L** # &emsp; clears screen and redisplay the line  
+**CTRL+N** # &emsp; next line in command history  
+**CTRL+R** # &emsp; searches in your command history  
+**CTRL+T** # &emsp; transposes two characters  
+**CTRL+U** # &emsp; kills backward to the beginning of line  
+**CTRL+W** # &emsp; kills the word behind the cursor  
+**CTRL+Y** # &emsp; retrieves last deleted string  
+**CTRL+Z** # &emsp; stops the current command, resume with fg in the foreground or bg in the background  
 ```
