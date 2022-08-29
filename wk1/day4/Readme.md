@@ -192,14 +192,14 @@ Wildcard  &emsp;&emsp;&emsp;  Meaning
 Using wildcards, it is possible to construct very sophisticated selection criteria for filenames. Here are some examples of patterns and what they match:  
 
 Pattern	                    Matches  
-`*`	                        All filenames  
-`g*`	                    All filenames that begin with the character "g"  
-`b*.txt`	                All filenames that begin with the character "b" and end with the characters ".txt"  
-`Data???`	                Any filename that begins with the characters "Data" followed by exactly 3 more characters  
-`[abc]*`	                Any filename that begins with "a" or "b" or "c" followed by any other characters  
-`[[:upper:]]*`	            Any filename that begins with an uppercase letter. This is an example of a character class.   
-`BACKUP.[[:digit:]][[:digit:]]`	Another example of character classes. This pattern matches any filename that begins with the characters "BACKUP." followed by exactly two numerals.  
-`*[![:lower:]]`	            Any filename that does not end with a lowercase letter.  
+`*`	&emsp;&emsp;&emsp;      All filenames  
+`g*` &emsp;&emsp;&emsp;     All filenames that begin with the character "g"  
+`b*.txt` &emsp;&emsp;&emsp; All filenames that begin with the character "b" and end with the characters ".txt"  
+`Data???`&emsp;&emsp;&emsp; Any filename that begins with the characters "Data" followed by exactly 3 more characters  
+`[abc]*` &emsp;&emsp;&emsp; Any filename that begins with "a" or "b" or "c" followed by any other characters  
+`[[:upper:]]*` &emsp;&emsp;&emsp; Any filename that begins with an uppercase letter. This is an example of a character class.   
+`BACKUP.[[:digit:]][[:digit:]]`	&emsp;&emsp;&emsp; Another example of character classes. This pattern matches any filename that begins with the characters "BACKUP." followed by exactly two numerals.  
+`*[![:lower:]]`	 &emsp;&emsp;&emsp; Any filename that does not end with a lowercase letter.  
 
 ## cp
 The cp program copies files and directories.   
