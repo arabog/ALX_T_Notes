@@ -1,6 +1,9 @@
 # Emacs
 <a href="https://www.gnu.org/software/emacs/tour/" target="_blank">GNU Emacs</a>  
 
+## Using Emacs as editor
+Open emacs by typing emacs in your shell. Then type C-h t to open the tutorial and go through it.  
+
 Beyond just being able to edit plain text files, Emacs includes special features to help you write in many different human languages and programming/markup languages as well as tools for compiling, running, and testing programs. Emacs integrates with GDB to provide an IDE (M-x gdb)   
 Emacs can compare two files and highlight their differences. (M-x ediff)  
 Emacs is a file manager (M-x dired)  
