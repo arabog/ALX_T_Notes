@@ -49,33 +49,31 @@ If the last character of your shell prompt is # rather than $, you are operating
 Even though the shell is a command line interface, the mouse is still handy.  
 Besides using the mouse to scroll the contents of the terminal window, we can can use it to copy text.  
 
+
 ## Linux Navigation
 In this lesson, we will introduce our first three commands:   
 `pwd` (print working directory),   
 `cd` (change directory), and  
 `ls` (list files and directories).  
 
-The files on a Linux system are arranged in what is called a hierarchical directory structure. This means that they are organized in a tree-like pattern of directories (called folders in other systems), which may contain files and subdirectories. The first directory in the file system is called the root directory. The root directory contains files and subdirectories, which contain more files and subdirectories and so on and so on.  
+The files on a Linux system are arranged in what is called a hierarchical directory structure. This means that they are organized in a tree-like pattern of directories (called folders in other systems), which may contain files and subdirectories. **The first directory in the file system is called the root directory**. The root directory contains files and subdirectories, which contain more files and subdirectories and so on and so on.  
 
 ## pwd
 Think of the file system tree as a maze, and that we are standing in it. At any given moment, we are located in a single directory. Inside that directory, we can see its files and the pathway to its parent directory and the pathways to the subdirectories of the directory in which we are standing.  
-
-The directory we are standing in is called the working directory. To see the name of the working directory, we use the pwd command.  
+The directory we are standing in is called the **working directory**. To see the name of the working directory, we use the **pwd** command.  
 
 ### ls
-To list the files in the working directory, we use the ls command.  
+To list the files in the working directory, we use the `ls` command.  
 
 ### cd
-To change the working directory (where we are standing in the maze) we use the cd command. To do this, we type cd followed by the pathname of the desired working directory. A pathname is the route we take along the branches of the tree to get to the directory we want. Pathnames can be specified two different ways; absolute pathnames or relative pathnames. Let's look with absolute pathnames first.  
+To change the working directory (where we are standing in the maze) we use the `cd` command. To do this, we type cd followed by the pathname of the desired working directory. A **pathname** is the route we take along the branches of the tree to get to the directory we want. Pathnames can be specified two different ways; absolute pathnames or relative pathnames. Let's look at absolute pathnames first.  
 
 ![l1](l1.png?raw=true "l1")
 
-An absolute pathname begins with the root directory and follows the tree branch by branch until the path to the desired directory or file is completed. For example, there is a directory on your system in which most programs are installed. The pathname of the directory is /usr/bin. This means from the root directory (represented by the leading slash in the pathname) there is a directory called "usr" which contains a directory called "bin".  
+An absolute pathname begins with the root directory and follows the tree branch by branch until the path to the desired directory or file is completed. For example, there is a directory on your system in which most programs are installed. The pathname of the directory is **/usr/bin**. This means from the root directory (represented by the leading slash, **/**, in the pathname) there is a directory called "usr" which contains a directory called "bin".  
 
-A relative pathname starts from the working directory. To do this, it uses a couple of special notations to represent relative positions in the file system tree. These special notations are "." (dot) and ".." (dot dot).  
-
+A relative pathname starts from the working directory. To do this, it uses a couple of special notations to represent relative positions in the file system tree. These special notations are **.** (dot) and **..** (dot dot).  
 The "." notation refers to the working directory itself and the ".." notation refers to the working directory's parent directory.  
-
 We could do that two different ways. First, with an absolute pathname:  
 ![l2](l2.png?raw=true "l2")
 
@@ -84,15 +82,11 @@ Or, with a relative pathname:
 
 Absolute means stating the exact path while relative means no path was stated but move a step back.  
 In most cases, we can omit the "./". `cd bin`  
-
 If we type cd followed by nothing, cd will change the working directory to our home directory.  
-
 A related shortcut is to type cd ~user_name. In this case, cd will change the working directory to the home directory of the specified user.  
-
-Typing cd - changes the working directory to the previous one.  
+Typing **cd -** changes the working directory to the previous one.  
 
 ![l4](l4.png?raw=true "l4")
-
 
 ## Important facts about file names
 File names that begin with a period character are hidden. This only means that `ls` will not list them unless we say `ls -a`. 
