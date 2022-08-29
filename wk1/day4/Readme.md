@@ -89,32 +89,30 @@ Typing **cd -** changes the working directory to the previous one.
 ![l4](l4.png?raw=true "l4")
 
 ## Important facts about file names
-File names that begin with a period character are hidden. This only means that `ls` will not list them unless we say `ls -a`. 
+File names that begin with a **.**, period character are hidden. This only means that `ls` will not list them unless we say `ls -a`. 
 
 ![l5](l5.png?raw=true "l5")
 
 
 File names in Linux, like Unix, are case sensitive. The file names "File1" and "file1" refer to different files.  
-
 Linux has no concept of a "file extension" like Windows systems. You may name files any way you like. However, while Linux itself does not care about file extensions, many application programs do.  
-
 Though Linux supports long file names which may contain embedded spaces and punctuation characters, limit the punctuation characters to period, dash, and underscore. Most importantly, do not embed spaces in file names. If you want to represent spaces between words in a file name, use underscore characters.   
 
 # Linux - looking around
-`ls` (list files and directories)
-`less` (view text files)
-`file` (classify a file's contents)
+`ls` (list files and directories)  
+`less` (view text files)  
+`file` (classify a file's contents)  
 
-ls  
-The ls command is used to list the contents of a directory. It is probably the most commonly used Linux command. It can be used in a number of different ways. Here are some examples:  
-
+## ls  
+The **ls** command is used to list the contents of a directory. It is probably the most commonly used Linux command. It can be used in a number of different ways. Here are some examples:  
+```
 Command	                    Result
 `ls`	                    List the files in the working directory  
 `ls /bin`	                List the files in the /bin directory (or any other directory we care to specify)  
 `ls -l`	                    List the files in the working directory in long format  
 `ls -l /etc /bin`           List the files in the /bin directory and the /etc directory in long format  
 `ls -la ..`	                List all files (even ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format  
-
+```
 ![l6](l6.png?raw=true "l6")
 ![l10](l10.png?raw=true "l10")
 ![l7](l7.png?raw=true "l7")
