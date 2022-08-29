@@ -160,7 +160,7 @@ Page Down or `space` &emsp;&emsp;	Scroll forward one page
 `q`	 &emsp;&emsp;       Quit  
 
 **file**  
-As we wander around our Linux system, it is helpful to determine what kind of data a file contains before we try to view it. This is where the file command comes in. file will examine a file and tell us what kind of file it is. To use the file program, we just type: `file name_of_file`  
+As we wander around our Linux system, it is helpful to determine what kind of data a file contains before we try to view it. This is where the **file** command comes in. `file` will examine a file and tell us what kind of file it is. To use the file program, we just type: `file name_of_file`  
 
 
 # Linux - manipulating files
@@ -168,7 +168,7 @@ This lesson will introduce the following commands:
 `cp` - copy files and directories  
 `mv` - move or rename files and directories  
 `rm` - remove files and directories  
-`rmdir` - remove directories  
+`rmdir or rm -r dir` - remove directories  
 `mkdir` - create directories  
 
 
