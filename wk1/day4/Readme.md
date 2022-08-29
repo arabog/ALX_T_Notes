@@ -178,16 +178,16 @@ These five commands are among the most frequently used Linux commands. They are 
 Before we begin with our commands, we'll first look at a shell feature that makes these commands so powerful. Since the shell uses filenames so much, it provides special characters to help you rapidly specify groups of filenames. These special characters are called `wildcards`. *Wildcards allow you to select filenames based on patterns of characters.*  
 
 Wildcard	                Meaning  
-`*`	                        Matches any characters  
-`?`	                        Matches any single character  
-`[characters]`	            Matches any character that is a member of the set characters. The set of characters may also be expressed as a POSIX character class such as one of the following:  
-                            [:alnum:]	        Alphanumeric characters  
-                            [:alpha:]	        Alphabetic characters  
-                            [:digit:]	        Numerals  
-                            [:upper:]	        Uppercase alphabetic characters  
-                            [:lower:]	        Lowercase alphabetic characters  
+`*`	   &emsp;               Matches any characters  
+`?`	   &emsp;               Matches any single character  
+`[characters]`	&emsp;      Matches any character that is a member of the set characters. The set of characters may also be expressed as a POSIX character class such as one of the following:  
+&emsp;&emsp;&emsp;          [:alnum:]	 &emsp;&emsp;    Alphanumeric characters  
+&emsp;&emsp;&emsp;          [:alpha:]	 &emsp;&emsp;    Alphabetic characters  
+&emsp;&emsp;&emsp;          [:digit:]	 &emsp;&emsp;    Numerals  
+&emsp;&emsp;&emsp;          [:upper:]	 &emsp;&emsp;    Uppercase alphabetic characters  
+&emsp;&emsp;&emsp;          [:lower:]	 &emsp;&emsp;    Lowercase alphabetic characters  
 
-`[!characters]`	            Matches any character that is not a member of the set characters  
+`[!characters]`	 &emsp;     Matches any character that is not a member of the set characters  
 
 Using wildcards, it is possible to construct very sophisticated selection criteria for filenames. Here are some examples of patterns and what they match:  
 
