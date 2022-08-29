@@ -252,16 +252,16 @@ The `mkdir` command is used to create directories: `mkdir directory...`
 Using Commands with Wildcards  
 Since the commands we have covered here accept multiple file and directories names as arguments, you can use wildcards to specify them. Here are a few examples:  
 
-Command	 &emsp;&emsp;&emsp;  Results  
-`cp *.txt text_files` &emsp;&emsp;&emsp; Copy all files in the current working directory with names ending with the characters ".txt" to an existing directory named text_files.  
-`mv dir1 ../*.bak dir2`	&emsp;&emsp;&emsp;   Move the subdirectory dir1 and all the files ending in ".bak" in the current working directory's parent directory to an existing directory named dir2.  
+Command	 &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; Results  
+`cp *.txt text_files` &emsp;&emsp;&emsp; Copy **all files** in the current working directory with names ending with the characters **".txt"** to an **existing directory** named text_files.  
+`mv dir1 ../*.bak dir2`	&emsp;&emsp;&emsp;   Move **the subdirectory dir1** and all the files ending in ".bak" in the **current working directory's parent directory** to an existing directory named dir2.  
 `rm *~`	 &emsp;&emsp;&emsp;    Delete all files in the current working directory that end with the character "~". Some applications create backup files using this naming scheme. Using this command will clean them out of a directory.  
 
-http://linuxcommand.org/tlcl.php or Linux Command textbook  
+http://linuxcommand.org/tlcl.php or Linux Command textbook in ds directory  
 
 # Linux - /tmp
 `/tmp`  
-This directory contains mostly files that are required temporarily. Many programs use this to create lock files and for temporary storage of data. Do not remove files from this directory unless you know exactly what you are doing! Many of these files are important for currently running programs and deleting them may result in a system crash. Usually it won't contain more than a few KB anyway. On most systems, this directory is cleared out at boot or at shutdown by the local system.  
+This directory contains mostly files that are required temporarily. Many programs use this to create **lock files and for temporary storage of data. Do not remove files from this directory unless you know exactly what you are doing!** Many of these files are important for currently running programs and deleting them may result in a system crash. Usually it won't contain more than a few KB anyway. On most systems, this directory is cleared out at boot or at shutdown by the local system.  
 
 
 *Linux Filesystem Hierarchy*  
@@ -281,7 +281,7 @@ Explore:
 *man rmdir*  
 
 Q: Which command should you use to delete a directory?  
-`rmdir`  
+`rm dir or rmdir dir` if there is no content in d dir. `rm -r dir` if there is any content.    
 
 Q: Then, remove the directory empty_directory 
 `rmdir empty_directory`  
