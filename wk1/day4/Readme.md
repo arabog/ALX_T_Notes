@@ -136,28 +136,28 @@ If we use the `-l` option with `ls`, you will get a file listing that contains a
 
 ### less
 **less** is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.  
- 
+
 ![l11](l11.png?raw=true "l11") 
 
 ### What is "text"?
 There are many ways to represent information on a computer. All methods involve defining a relationship between the information and some numbers that will be used to represent it. Computers, after all, only understand numbers and all data is converted to numeric representation.  
 
-Some of these representation systems are very complex (such as compressed multimedia files), while others are rather simple. One of the earliest and simplest is called ASCII text. ASCII (pronounced "As-Key") is short for American Standard Code for Information Interchange. This is a simple encoding scheme that was first used on Teletype machines to map keyboard characters to numbers. Text is a simple one-to-one mapping of characters to numbers. It is very compact. Fifty characters of text translates to fifty bytes of data.  
+Some of these representation systems are very complex (such as compressed multimedia files), while others are rather simple. One of the earliest and simplest is called ASCII text. ASCII (pronounced "As-Key") is short for **American Standard Code for Information Interchange**. This is a simple encoding scheme that was first used on Teletype machines to map keyboard characters to numbers. Text is a simple one-to-one mapping of characters to numbers. It is very compact. Fifty characters of text translates to fifty bytes of data.  
 
 The less program is invoked by simply typing: `less text_file` This will display the file.  
 
 **Controlling less**  
 Once started, less will display the text file one page at a time. We can use the `Page Up` and `Page Down` keys to move through the text file. To exit less, we type `q`.  
 
-Command	                Action  
-Page Up or `b`	        Scroll back one page  
-Page Down or `space`	Scroll forward one page     
-`G`	                    Go to the end of the text file  
-`1G`	                Go to the beginning of the text file  
-`/characters`	        Search forward in the text file for an occurrence of the specified characters  
-`n`	                    Repeat the previous search  
-`h`	                    Display a complete list less commands and options  
-`q`	                    Quit  
+Command	    &emsp;&emsp; Action  
+Page Up or `b`	 &emsp;&emsp;       Scroll back one page  
+Page Down or `space` &emsp;&emsp;	Scroll forward one page     
+`G`	  &emsp;&emsp;      Go to the end of the text file  
+`1G` &emsp;&emsp;       Go to the beginning of the text file  
+`/characters`  &emsp;&emsp; Search forward in the text file for an occurrence of the specified characters  
+`n`	 &emsp;&emsp;       Repeat the previous search  
+`h`	 &emsp;&emsp;       Display a complete list less commands and options  
+`q`	 &emsp;&emsp;       Quit  
 
 **file**  
 As we wander around our Linux system, it is helpful to determine what kind of data a file contains before we try to view it. This is where the file command comes in. file will examine a file and tell us what kind of file it is. To use the file program, we just type: `file name_of_file`  
