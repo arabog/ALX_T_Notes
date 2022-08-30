@@ -45,7 +45,156 @@ However, when a commit merits a bit of explanation and context, you need to writ
 Derezz the master control program
 
 MCP turned out to be evil and had become intent on world domination.
-This commit throws Tron's disc into MCP (causing its deresolution)
-and turns it back into a chess game.
+This commit throws Tron's disc into MCP (causing its deresolution) and turns it back into a chess game.
 ```
+
+Commit messages with bodies are not so easy to write with the -m option. You’re better off writing the message in a proper text editor. If you do not already have an editor set up for use with Git at the command line, read this section of Pro Git. see git_commit.md file
+
+In any case, the separation of subject from body pays off when browsing the log. Here’s the full log entry:  
+```
+$ git log
+commit 42e769bdf4894310333942ffc5a15151222a87be
+Author: Kevin Flynn <kevin@flynnsarcade.com>
+Date:   Fri Jan 01 00:00:00 1982 -0200
+
+ Derezz the master control program
+
+ MCP turned out to be evil and had become intent on world domination.
+ This commit throws Tron's disc into MCP (causing its deresolution) and turns it back into a chess game. 
+ ```
+And now `git log --oneline`, which prints out just the subject line:  
+```
+$ git log --oneline
+42e769 Derezz the master control program
+```
+Or, `git shortlog`, which groups commits by user, again showing just the subject line for concision:
+```
+$ git shortlog
+Kevin Flynn (1):
+      Derezz the master control program
+
+Alan Bradley (1):
+      Introduce security program "Tron"
+
+Ed Dillinger (3):
+      Rename chess program to "MCP"
+      Modify chess program
+      Upgrade chess program
+
+Walter Gibbs (1):
+      Introduce protoype chess program
+```
+### 2. Limit the subject line to 50 characters
+50 characters is not a hard limit, just a rule of thumb. Keeping subject lines at this length ensures that they are readable, and forces the author to think for a moment about the most concise way to explain what’s going on.  
+`Tip: If you’re having a hard time summarizing, you might be committing too many changes at once. Strive for atomic commits (a topic for a separate post).`   
+
+### 3. Capitalize the subject line
+3. Capitalize the subject line
+This is as simple as it sounds. Begin all subject lines with a capital letter.  
+For example: Accelerate to 88 miles per hour  
+Instead of: accelerate to 88 miles per hour  
+
+### 4. Do not end the subject line with a period
+Trailing punctuation is unnecessary in subject lines. Besides, space is precious when you’re trying to keep them to 50 chars or less.  
+Example: Open the pod bay doors  
+Instead of: Open the pod bay doors.  
+
+### 5. Use the imperative mood in the subject line
+Imperative mood just means “spoken or written as if giving a command or instruction”. A few examples:  
+Clean your room  
+Close the door  
+Take out the trash  
+Each of the seven rules you’re reading about right now are written in the imperative (“Wrap the body at 72 characters”, etc.).  
+
+The imperative can sound a little rude; that’s why we don’t often use it. But it’s perfect for Git commit subject lines. One reason for this is that Git itself uses the imperative whenever it creates a commit on your behalf.  
+
+For example, the default message created when using git merge reads: Merge branch 'myfeature'  
+
+And when using git revert: Revert "Add the thing with the stuff"  
+This reverts commit cc87791524aedd593cff5a74532befe7ab69ce9d.  
+
+Or when clicking the “Merge” button on a GitHub pull request:  
+Merge pull request #123 from someuser/somebranch  
+
+So when you write your commit messages in the imperative, you’re following Git’s own built-in conventions. For example:  
+
+Refactor subsystem X for readability  
+Update getting started documentation  
+Remove deprecated methods  
+Release version 1.0.0  
+
+Writing this way can be a little awkward at first. We’re more used to speaking in the indicative mood, which is all about reporting facts. That’s why commit messages often end up reading like this:  
+Fixed bug with Y  
+Changing behavior of X  
+
+And sometimes commit messages get written as a description of their contents:  
+More fixes for broken stuff  
+Sweet new API methods  
+
+To remove any confusion, here’s a simple rule to get it right every time.  
+A properly formed Git commit subject line should always be able to complete the following sentence:  
+If applied, this commit will your subject line here  
+
+For example:
+If applied, this commit will refactor subsystem X for readability  
+If applied, this commit will update getting started documentation  
+If applied, this commit will remove deprecated methods  
+If applied, this commit will release version 1.0.0  
+If applied, this commit will merge pull request #123 from user/branch  
+
+Notice how this doesn’t work for the other non-imperative forms:  
+If applied, this commit will fixed bug with Y  
+If applied, this commit will changing behavior of X  
+If applied, this commit will more fixes for broken stuff  
+If applied, this commit will sweet new API methods  
+
+Remember: Use of the imperative is important only in the subject line. You can relax this restriction when you’re writing the body.  
+
+### 6. Wrap the body at 72 characters
+Git never wraps text automatically. When you write the body of a commit message, you must mind its right margin, and wrap text manually.  
+
+The recommendation is to do this at 72 characters, so that Git has plenty of room to indent text while still keeping everything under 80 characters overall.  
+
+A good text editor can help here. It’s easy to configure Vim, for example, to wrap text at 72 characters when you’re writing a Git commit. Traditionally, however, IDEs have been terrible at providing smart support for text wrapping in commit messages (although in recent versions, IntelliJ IDEA has finally gotten better about this).  
+
+### 7. Use the body to explain what and why vs. how
+This commit from Bitcoin Core is a great example of explaining what changed and why:
+```
+commit eb0b56b19017ab5c16c745e6da39c53126924ed6
+Author: Pieter Wuille <pieter.wuille@gmail.com>
+Date:   Fri Aug 1 22:57:55 2014 +0200
+
+   Simplify serialize.h's exception handling
+
+   Remove the 'state' and 'exceptmask' from serialize.h's stream
+   implementations, as well as related methods.
+
+   As exceptmask always included 'failbit', and setstate was always
+   called with bits = failbit, all it did was immediately raise an
+   exception. Get rid of those variables, and replace the setstate
+   with direct exception throwing (which also removes some dead
+   code).
+
+   As a result, good() is never reached after a failure (there are
+   only 2 calls, one of which is in tests), and can just be replaced
+   by !eof().
+
+   fail(), clear(n) and exceptions() are just never called. Delete
+   them.  
+```
+Take a look at the full diff and just think how much time the author is saving fellow and future committers by taking the time to provide this context here and now. If he didn’t, it would probably be lost forever.  
+
+In most cases, you can leave out details about how a change has been made. Code is generally self-explanatory in this regard (and if the code is so complex that it needs to be explained in prose, that’s what source comments are for). Just focus on making clear the reasons why you made the change in the first place—the way things worked before the change (and what was wrong with that), the way they work now, and why you decided to solve it the way you did.  
+
+The future maintainer that thanks you may be yourself!  
+
+## Tips
+### Learn to love the command line. Leave the IDE behind.
+For as many reasons as there are Git subcommands, it’s wise to embrace the command line. Git is insanely powerful; IDEs are too, but each in different ways. I use an IDE every day (IntelliJ IDEA) and have used others extensively (Eclipse), but I have never seen IDE integration for Git that could begin to match the ease and power of the command line (once you know it).  
+
+Certain Git-related IDE functions are invaluable, like calling git rm when you delete a file, and doing the right stuff with git when you rename one. Where everything falls apart is when you start trying to commit, merge, rebase, or do sophisticated history analysis through the IDE.    
+
+When it comes to wielding the full power of Git, it’s command-line all the way.    
+
+Remember that whether you use Bash or Zsh or Powershell, there are tab completion scripts that take much of the pain out of remembering the subcommands and switches.  
 
