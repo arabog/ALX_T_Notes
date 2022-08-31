@@ -48,7 +48,11 @@ Recall the `"kdkjflajfks"` command using the up-arrow key if needed. Now, try th
 
 ```
 You're not operating as root, are you?
-If the last character of your shell prompt is # rather than $, you are operating as the superuser. This means that you have administrative privileges. This can be dangerous, since you are able to delete or overwrite any file on the system. Unless you absolutely need administrative privileges, do not operate as the superuser.
+If the last character of your shell prompt is # rather than $,   
+you are operating as the superuser. This means that you have     administrative privileges. This can be dangerous, since you   
+are able to delete or overwrite any file on the system. Unless   
+you absolutely need administrative privileges, do not operate  
+as the superuser.
 ```
 ### Using the Mouse
 Even though the shell is a command line interface, the mouse is still handy.  
