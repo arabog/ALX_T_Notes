@@ -3,6 +3,10 @@
 
 <a href="https://alx-intranet.hbtn.io/concepts/81" target="_blank">Vagrant</a>  
 
+<a href="https://linux.die.net/man/1/uname" target="_blank">uname</a>  
+
+
+
 ## My machine vs. virtual environments
 Your computer’s environment - whether it’s Windows, MacOS or a Linux distribution - will change a lot over time, with or without you noticing. You will install applications, games, tools, … that will require and install different dependencies and at the end of the day you can end up having completely different behaviors or even have something not work because of software conflicts.  
 
@@ -49,3 +53,9 @@ Create your first virtual machine:
 &emsp; &emsp; &emsp; $ `vagrant init ubuntu/focal64` -> it will generate a Vagrantfile with base = "ubuntu/focal64" - you don’t have to execute this command line everyday, only once, to create a new virtual machine  
 &emsp; &emsp; &emsp; $ `vagrant up` -> it will start your virtual machine  
 &emsp; &emsp; &emsp; $`vagrant ssh` -> now you are inside your virtual machine.  
+
+```
+vagrant init ubuntu/focal64
+vagrant up
+vagrant ssh
+```
