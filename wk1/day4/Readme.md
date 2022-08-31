@@ -397,12 +397,12 @@ type command
 ```
 where “command” is the name of the command we want to examine. Here are some examples: 
 
-![l13](l13.png?raw=true "l13")
+![l13](l13.png?raw=true "l13")  
 Here we see the results for three different commands. Notice that the one for ls and how the ls command is actually an alias for the ls command with the “-- color=auto” option added. Now we know why the output from ls is displayed in color!  
 
 ### which
 Sometimes there is more than one version of an executable program installed on a system. While this is not very common on desktop systems, it's not unusual on large servers. To determine the exact location of a given executable, the which command is used:
-![l14](l14.png?raw=true "l14")
+![l14](l14.png?raw=true "l14")  
 
 `which` only works for executable programs, not builtins nor aliases that are substitutes for actual executable programs.
 
@@ -411,7 +411,7 @@ With this knowledge of what a command is, we can now search for the documentatio
 
 ### help
 `bash` has a built-in help facility available for each of the shell builtins. To use it, type “help” followed by the name of the shell builtin. Optionally, we can add the -m option to change the format of the output. For example:
-![l15](l15.png?raw=true "l15")
+![l15](l15.png?raw=true "l15")  
 
 **A note on notation:** When square brackets appear in the description of a command's syntax, they indicate optional items. A vertical bar character indicates mutually exclusive items. In the case of the cd command above: 
 ```
@@ -421,7 +421,7 @@ This notation says that the command cd may be followed optionally by either a �
 
 ### --help
 Many executable programs support a “--help” option that displays a description of the command's supported syntax and options. For example:
-![l16](l16.png?raw=true "l16")
+![l16](l16.png?raw=true "l16")  
 Some programs don't support the “--help” option, but try it anyway. Often it results in an error message that will reveal similar usage information.  
 
 ### man
@@ -433,14 +433,10 @@ where “program” is the name of the command to view. Man pages vary somewhat 
 ```
 man ls
 ```
-![l17](l17.png?raw=true "l17")
+![l17](l17.png?raw=true "l17")  
 On most Linux systems, man uses less to display the manual page, so all of the familiar less commands work while displaying the page.  
 
 ### README and Other Documentation Files
 Many software packages installed on your system have documentation files residing in the `/usr/share/doc` directory. Most of these are stored in plain text format and can be viewed with less. Some of the files are in HTML format and can be viewed with a web browser. We may encounter some files ending with a **“.gz”** extension. This indicates that they have been compressed with the **gzip** compression program. The gzip package includes a special version of `less` called **zless** that will display the contents of gzip-compressed text files.  
 
-
-
-
-
-<!-- ![l1](l1.png?raw=true "l1") -->
+<a href="http://linuxcommand.org/lc3_man_pages/man1.html" target="_blank">man command</a>  
