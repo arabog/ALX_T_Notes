@@ -351,9 +351,8 @@ http://linuxcommand.org/tlcl.php or Linux Command textbook in ds directory
 This directory contains mostly files that are required temporarily. Many programs use this to create **lock files and for temporary storage of data. Do not remove files from this directory unless you know exactly what you are doing!** Many of these files are important for currently running programs and deleting them may result in a system crash. Usually it won't contain more than a few KB anyway. On most systems, this directory is cleared out at boot or at shutdown by the local system.  
 
 
-*Linux Filesystem Hierarchy*  
-https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/tmp.html
-
+**Linux Filesystem Hierarchy**  
+<a href="https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/tmp.html" target="_blank">Linux Filesystem Hierarchy</a>  
 
 Explore:  
 *man pwd*  
