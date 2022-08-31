@@ -47,7 +47,7 @@ Wonderful! Now press the up-arrow key. Watch how our previous command `"kdkjflaj
 Recall the `"kdkjflajfks"` command using the up-arrow key if needed. Now, try the left and right-arrow keys. We can position the text cursor anywhere in the command line. This allows us to easily correct mistakes.   
 
 ```
-You're not operating as root, are you?
+### You're not operating as root, are you?
 If the last character of your shell prompt is # rather than $,   
 you are operating as the superuser. This means that you have  
 administrative privileges. This can be dangerous, since you   
