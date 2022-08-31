@@ -88,7 +88,7 @@ We could do that two different ways. First, with an absolute pathname:
 Or, with a relative pathname:  
 ![l3](l3.png?raw=true "l3")
 
-Absolute means stating the exact path while relative means no path was stated but move a step back. In most cases, we can omit the "./". `cd bin` If we type cd followed by nothing, cd will change the working directory to our home directory. A related shortcut is to type **cd  ~user_name**. In this case, cd will change the working directory to the home directory of the specified user. Typing **cd -** changes the working directory to the previous one.  
+Absolute means stating the exact path while relative means no path was stated but move a step back. In most cases, we can omit the "./". `cd bin` If we type cd followed by nothing, cd will change the working directory to our home directory. A related shortcut is to type **cd ~user_name**. In this case, cd will change the working directory to the home directory of the specified user. Typing **cd -** changes the working directory to the previous one.  
 
 ![l4](l4.png?raw=true "l4")
 
@@ -104,7 +104,7 @@ Though Linux supports long file names which may contain embedded spaces and punc
 
 # Linux - looking around
 `ls` (list files and directories)  
-`less` (view text files)  
+`less` (view text files) content, and quit suing q  
 `file` (classify a file's contents)  
 
 ## ls  
@@ -115,7 +115,7 @@ ls	                        List the files in the working directory
 ls /bin	                    List the files in the /bin directory (or any other directory we care to specify)  
 ls -l	                    List the files in the working directory in long format  
 ls -l /etc /bin             List the files in the /bin directory and the /etc directory in long format  
-ls -la ..	                List all files (even ones with names beginning with a period character, which are normally hidden) in the parent of the working directory in long format  
+ls -la ..	                List all files (even ones with names beginning with a period character,  which are normally hidden) in the parent of the working directory in long format  
 ```
 ![l6](l6.png?raw=true "l6")
 ![l10](l10.png?raw=true "l10")
