@@ -176,15 +176,15 @@ The contents below show some interesting places to explore. This is by no means 
 If there is an interesting file, use the `file` command to determine its contents.  
 For text files, use `less` to view them.  
 
-**Directory: /**  	 
+**Directory: /**  
 **Description**  
 The root directory where the file system begins(the first directory of the sysmtem). The root directory will probably contain only subdirectories.  
 
-**Directory: /boot**  	 
+**Directory: /boot**  
 **Description**  
 This is where the Linux kernel and boot loader files are kept. The kernel is a file called vmlinuz.    
 
-**Directory: /etc**  	 
+**Directory: /etc**  
 **Description**  
 The **/etc** directory contains the configuration files for the system. All of the files in /etc should be text files. Some points of interest are:  
 `/etc/passwd` The `passwd` file contains the essential information for each user. This is where user accounts are defined.  
@@ -192,15 +192,15 @@ The **/etc** directory contains the configuration files for the system. All of t
 `/etc/hosts` This file lists the `network host names and IP addresses` that are intrinsically known to the system.  
 `/etc/init.d` This directory contains the scripts that start various system services at boot time.  
 
-**Directory: /bin, /usr/bin**  	 
+**Directory: /bin, /usr/bin**  
 **Description**  
 These two directories contain most of the programs for the system. The **/bin** directory has the **essential programs that the system requires to operate**, while **/usr/bin** contains **applications** for the system's users.  
 
-**Directory: /sbin, /usr/sbin**  	 
+**Directory: /sbin, /usr/sbin**  
 **Description**  
 The sbin directories contain programs for system administration, mostly for use by the superuser.  
 
-**Directory: /usr**  	 
+**Directory: /usr**  
 **Description**  
 The **/usr** directory contains a variety of things that support user applications.  
 Some highlights:  
@@ -209,42 +209,42 @@ Some highlights:
 `/usr/share/doc` Various documentation files in a variety of formats.  
 `/usr/share/man` The man pages are kept here.  
 
-**Directory: /usr/local**  	 
+**Directory: /usr/local**  
 **Description**  
 `/usr/local` and its subdirectories are used for the installation of software and other files for use on the local machine. What this really means is that software that is not part of the official distribution (which usually goes in /usr/bin) goes here.    
 When you find interesting programs to install on your system, they should be installed in one of the /usr/local directories. Most often, the directory of choice is `/usr/local/bin`.  
 
-**Directory: /var**  	 
+**Directory: /var**  
 **Description**  
 The` /var` directory contains files that change as the system is running. This includes:  
 `/var/log`  are directory that contains log files. These are updated as the system runs. It's a good idea to view the files in this directory from time to time, to monitor the health of your system.  
 `/var/spool` This directory is used to hold files that are queued for some process, such as mail messages and print jobs. When a user's mail first arrives on the local system (assuming it has local mail, a rare occurrence on modern machines that are not mail servers), the messages are first stored in /var/spool/mail  
 
-**Directory: /lib**  	 
+**Directory: /lib**  
 **Description**  
 The shared libraries (similar to DLLs in that other operating system) are kept here.  
 
-**Directory: /home**  	 
+**Directory: /home**  
 **Description**  
 `/home` is where users keep their personal work. In general, this is the only place users are allowed to write files. This keeps things nice and clean :-)
 
-**Directory: /root**  	 
+**Directory: /root**  
 **Description**  
 This is the superuser's home directory.
 
-**Directory: /tmp**  	 
+**Directory: /tmp**  
 **Description**  
 `/tmp` is a directory in which programs can write their temporary files.
 
-**Directory: /dev**  	 
+**Directory: /dev**  
 **Description**  
 The `/dev` directory is a special directory, since it does not really contain files in the usual sense. Rather, **it contains devices** that are available to the system. **In Linux (like Unix), devices are treated like files**. You can read and write devices as though they were files. For example `/dev/fd0` is the first floppy disk drive, `/dev/sda` is the first hard drive. All the devices that the kernel understands are represented here.  
 
-**Directory: /proc**  	 
+**Directory: /proc**  
 **Description**  
 The `/proc` directory is also special. This directory does not contain files. In fact, this directory does not really exist at all. It is entirely virtual. The `/proc` directory contains little peep holes into the kernel itself. There are a group of numbered entries in this directory that correspond to all the processes running on the system. In addition, there are a number of named entries that permit access to the current configuration of the system. Many of these entries can be viewed. Try viewing `/proc/cpuinfo`. This entry will tell you what the kernel thinks of the system's CPU.  
 
-**Directory: /media**  	 
+**Directory: /media**  
 **Description**  
 `/media` is a normal directory which is used in a special way. The `/media` directory is used for mount points. Different physical storage devices (like hard disk drives) are attached to the file system tree in various places. This process of attaching a device to the tree is called **mounting**. For a device to be available, it must first be mounted.  
 
