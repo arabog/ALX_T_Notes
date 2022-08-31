@@ -254,10 +254,8 @@ When your system boots, it reads a list of mounting instructions in the `/etc/fs
 This lesson will introduce the following commands:  
 `cp` - copy files and directories  
 `mv` - move or rename files and directories  
-`rm` - remove files and directories  
-`rmdir or rm -r dir` - remove directories  
+`rm` - remove files and directories, `rmdir or rm -r dir` - remove directories  
 `mkdir` - create directories  
-
 
 These five commands are among the most frequently used Linux commands. They are the basic commands for manipulating both files and directories.  
 
@@ -267,7 +265,8 @@ Before we begin with our commands, we'll first look at a shell feature that make
 Wildcard  &emsp;&emsp;&emsp;  Meaning  
 `*`	   &emsp;               Matches any characters  
 `?`	   &emsp;               Matches any single character  
-`[characters]`	&emsp;      Matches any character that is a member of the set characters. The set of characters may also be expressed as a POSIX character class such as one of the following:  
+`[characters]`	&emsp;      Matches any character that is a member of the set characters.  
+The set of characters may also be expressed as a POSIX character class such as one of the following:  
 &emsp;&emsp;&emsp;          [:alnum:]	 &emsp;&emsp;    Alphanumeric characters  
 &emsp;&emsp;&emsp;          [:alpha:]	 &emsp;&emsp;    Alphabetic characters  
 &emsp;&emsp;&emsp;          [:digit:]	 &emsp;&emsp;    Numerals  
@@ -276,7 +275,8 @@ Wildcard  &emsp;&emsp;&emsp;  Meaning
 
 `[!characters]`	 &emsp;     Matches any character that is not a member of the set characters  
 
-Using wildcards, it is possible to construct very sophisticated selection criteria for filenames. Here are some examples of patterns and what they match:  
+Using wildcards, it is possible to construct very sophisticated selection criteria for filenames.  
+Here are some examples of patterns and what they match:  
 
 Pattern	    &emsp;&emsp;&emsp;  Matches  
 `*`	&emsp;&emsp;&emsp;      All filenames  
@@ -290,7 +290,6 @@ Pattern	    &emsp;&emsp;&emsp;  Matches
 
 ## cp
 The cp program copies files and directories. **cp file1 file2**    
-
 It can also be used to copy multiple files (and/or directories) to a different directory: **cp file... directory**    
 
 A note on notation: `...` signifies that an item can be repeated one or more times. e.g **cp file1 file2 file3 directory**     
@@ -300,28 +299,30 @@ if u r copying a directory too, **cp -r [file1 dir1 file2 file3] directory**
 
 Other useful examples of cp and its options include:  
 Command	 &emsp;&emsp;&emsp;    Results  
-`cp file1 file2`	&emsp;&emsp;&emsp;    Copies the contents of file1 into file2. If file2 does not exist, it is created; otherwise, file2 is silently overwritten with the contents of file1.  
+`cp file1 file2`	&emsp;&emsp;&emsp;    Copies the contents of file1 into file2.  
+**If file2 does not exist, it is created**; otherwise, file2 is silently overwritten with the contents of file1.  
 `cp -i file1 file2`	 &emsp;&emsp;&emsp;   Like above however, since the "-i" (interactive) option is specified, if file2 exists, the user is prompted before it is overwritten with the contents of file1.  
 `cp file1 dir1`	  &emsp;&emsp;&emsp;      Copy the contents of file1 **(into a file named file1) inside of directory dir1**.  
-`cp -R dir1 dir2`	&emsp;&emsp;&emsp;    Copy the contents of the directory dir1. If directory dir2 does not exist, it is created. Otherwise, it creates a directory named dir1 within directory dir2.  
+`cp -R dir1 dir2`	&emsp;&emsp;&emsp;    Copy the contents of the directory dir1 into dir1(newly created) inside dir2. If directory dir2 does not exist, it is created. Otherwise, it creates a directory named dir1 within directory dir2.  
 
 ## mv
 The `mv` command **moves or renames** files and directories depending on how it is used. It will either move one or more files to a different directory, or it will rename a file or directory. To rename a file, it is used like this:  
 `mv filename1 filename2`  
-
+i.e filename2 doesn't exit initially.  
 To move files (and/or directories) to a different directory:  
 `mv file... directory`  
+in this case, directory already exist.  
 
 Command	    &emsp;&emsp;&emsp;     Results  
 `mv file1 file2`	&emsp;&emsp;&emsp;      If file2 does not exist, then file1 is renamed file2. If file2 exists, its contents are silently replaced with the contents of file1.  
 `mv -i file1 file2`	 &emsp;&emsp;&emsp;   Like above however, since the "-i" (interactive) option is specified, if file2 exists, the user is prompted before it is overwritten with the contents of file1.  
-`mv file1 file2 dir1`	&emsp;&emsp;&emsp;   The files file1 and file2 are moved to directory dir1. **If dir1 does not exist, mv will exit with an error**.  
+`mv file1 file2 dir1`	&emsp;&emsp;&emsp;   The files file1 and file2 are moved to directory dir1. **If dir1 does not exist, mv will exit with an error**. Since, the alternative is to rename, and u can't rename files into directory.    
 `mv dir1 dir2`	&emsp;&emsp;&emsp;      If dir2 does not exist, then dir1 is renamed dir2. If dir2 exists, the directory dir1 is moved within directory dir2.  
 
 ## rm
 The `rm` command removes (deletes) files and directories. `rm file...`  
 
-Using the recursive option (**-r**), `rm` can also be used to delete directories: `rm -r directory...`  
+Using the recursive option (**-r**), `rm` can also be used to delete directories(including those with contents): `rm -r directory...`  
 
 Command	 &emsp;&emsp;&emsp;  Results   
 `rm file1 file2` &emsp;&emsp;&emsp;	    Delete file1 and file2.  
@@ -330,7 +331,6 @@ Command	 &emsp;&emsp;&emsp;  Results
 
 # Be careful with rm!
 Linux does not have an undelete command. Once you delete something with `rm`, it's gone. You can inflict terrific damage on your system with `rm` if you are not careful, particularly with wildcards.  
-
 Before you use `rm` with wildcards, try this helpful trick: construct your command using `ls` instead. By doing this, you can see the effect of your wildcards before you delete files.  
 
 ## mkdir
@@ -338,11 +338,11 @@ The `mkdir` command is used to create directories: `mkdir directory...`
 
 Using Commands with Wildcards  
 Since the commands we have covered here accept multiple file and directories names as arguments, you can use wildcards to specify them. Here are a few examples:  
-
 Command	 &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; Results  
 `cp *.txt text_files` &emsp;&emsp;&emsp; Copy **all files** in the current working directory with names ending with the characters **".txt"** to an **existing directory** named text_files.  
 `mv dir1 ../*.bak dir2`	&emsp;&emsp;&emsp;   Move **the subdirectory dir1** and all the files ending in ".bak" in the **current working directory's parent directory** to an existing directory named dir2.  
-`rm *~`	 &emsp;&emsp;&emsp;    Delete all files in the current working directory that end with the character "~". Some applications create backup files using this naming scheme. Using this command will clean them out of a directory.  
+`rm *~`	 &emsp;&emsp;&emsp;    Delete all files in the current working directory that end with the character "~".  
+Some applications create backup files using this naming scheme. Using this command will clean them out of a directory.  
 
 http://linuxcommand.org/tlcl.php or Linux Command textbook in ds directory  
 
@@ -372,3 +372,76 @@ Q: Which command should you use to delete a directory?
 
 Q: Then, remove the directory empty_directory 
 `rmdir empty_directory`  
+
+# Working with Commands
+Here, we will introduce the following commands.  
+`type` - Display information about command type  
+`which` - Locate a command  
+`help` - Display reference page for shell builtin  
+`man` - Display an on-line command reference  
+
+## What are "Commands?"
+Commands can be one of 4 different kinds:  
+**An executable program** like all those files we saw in `/usr/bin`. Within this category, programs can compiled binaries such as programs written in C and C++, or programs written in scripting languages such as the shell, Perl, Python, Ruby, etc.  
+**A command built into the shell itself.** bash provides a number of commands internally called `shell builtins`. The `cd` command, for example, is a shell builtin.    
+**A shell function.** These are miniature shell scripts incorporated into the environment.    
+**An alias.** Commands that we can define ourselves, built from other commands.    
+
+
+### Identifying Commands
+It is often useful to know exactly which of the four kinds of commands is being used and Linux provides a couple of ways to find out.  
+
+### type
+The type command is a shell builtin that displays the kind of command the shell will execute, given a particular command name. It works like this:  
+```
+type command
+```
+where “command” is the name of the command we want to examine. Here are some examples: 
+
+![l13](l13.png?raw=true "l13")
+Here we see the results for three different commands. Notice that the one for ls and how the ls command is actually an alias for the ls command with the “-- color=auto” option added. Now we know why the output from ls is displayed in color!  
+
+### which
+Sometimes there is more than one version of an executable program installed on a system. While this is not very common on desktop systems, it's not unusual on large servers. To determine the exact location of a given executable, the which command is used:
+![l14](l14.png?raw=true "l14")
+
+`which` only works for executable programs, not builtins nor aliases that are substitutes for actual executable programs.
+
+### Getting Command Documentation
+With this knowledge of what a command is, we can now search for the documentation available for each kind of command.
+
+### help
+`bash` has a built-in help facility available for each of the shell builtins. To use it, type “help” followed by the name of the shell builtin. Optionally, we can add the -m option to change the format of the output. For example:
+![l15](l15.png?raw=true "l15")
+
+**A note on notation:** When square brackets appear in the description of a command's syntax, they indicate optional items. A vertical bar character indicates mutually exclusive items. In the case of the cd command above: 
+```
+cd [-L|-P] [dir]
+```
+This notation says that the command cd may be followed optionally by either a “-L” or a “-P” and further, optionally followed by the argument “dir”.  
+
+### --help
+Many executable programs support a “--help” option that displays a description of the command's supported syntax and options. For example:
+![l16](l16.png?raw=true "l16")
+Some programs don't support the “--help” option, but try it anyway. Often it results in an error message that will reveal similar usage information.  
+
+### man
+Most executable programs intended for command line use provide a formal piece of documentation called a manual or man page. A special paging program called man is used to view them. It is used like this:  
+```
+man program
+```
+where “program” is the name of the command to view. Man pages vary somewhat in format but generally contain a title, a synopsis of the command's syntax, a description of the command's purpose, and a listing and description of each of the command's options. Man pages, however, do not usually include examples, and are intended as a reference, not a tutorial. Let's try viewing the man page for the ls command:  
+```
+man ls
+```
+![l17](l17.png?raw=true "l17")
+On most Linux systems, man uses less to display the manual page, so all of the familiar less commands work while displaying the page.  
+
+### README and Other Documentation Files
+Many software packages installed on your system have documentation files residing in the `/usr/share/doc` directory. Most of these are stored in plain text format and can be viewed with less. Some of the files are in HTML format and can be viewed with a web browser. We may encounter some files ending with a **“.gz”** extension. This indicates that they have been compressed with the **gzip** compression program. The gzip package includes a special version of `less` called **zless** that will display the contents of gzip-compressed text files.  
+
+
+
+
+
+<!-- ![l1](l1.png?raw=true "l1") -->
