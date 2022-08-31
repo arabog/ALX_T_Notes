@@ -46,8 +46,8 @@ Wonderful! Now press the up-arrow key. Watch how our previous command `"kdkjflaj
 
 Recall the `"kdkjflajfks"` command using the up-arrow key if needed. Now, try the left and right-arrow keys. We can position the text cursor anywhere in the command line. This allows us to easily correct mistakes.   
 
+**You're not operating as root, are you?**
 ```
-### You're not operating as root, are you?
 If the last character of your shell prompt is # rather than $,   
 you are operating as the superuser. This means that you have  
 administrative privileges. This can be dangerous, since you   
@@ -66,11 +66,10 @@ In this lesson, we will introduce our first three commands:
 `cd` (change directory), and  
 `ls` (list files and directories).  
 
-The files on a Linux system are arranged in what is called a hierarchical directory structure. This means that they are organized in a tree-like pattern of directories (called folders in other systems), which may contain files and subdirectories. **The first directory in the file system is called the root directory**. The root directory contains files and subdirectories, which contain more files and subdirectories and so on and so on.  
+The files on a Linux system are arranged in what is called a **hierarchical directory structure**. This means that they are organized in a tree-like pattern of directories (called folders in other systems), which may contain files and subdirectories. **The first directory in the file system is called the root directory**. The root directory contains files and subdirectories, which contain more files and subdirectories and so on and so on.  
 
 ## pwd
-Think of the file system tree as a maze, and that we are standing in it. At any given moment, we are located in a single directory. Inside that directory, we can see its files and the pathway to its parent directory and the pathways to the subdirectories of the directory in which we are standing.  
-The directory we are standing in is called the **working directory**. To see the name of the working directory, we use the **pwd** command.  
+Think of the file system tree as a maze, and that we are standing in it. At any given moment, we are located in a single directory. Inside that directory, we can see its files and the pathway to its parent directory and the pathways to the subdirectories of the directory in which we are standing. The directory we are standing in is called the **working directory**. To see the name of the working directory, we use the **pwd** command.  
 
 ### ls
 To list the files in the working directory, we use the `ls` command.  
@@ -82,19 +81,14 @@ To change the working directory (where we are standing in the maze) we use the `
 
 An absolute pathname begins with the root directory and follows the tree branch by branch until the path to the desired directory or file is completed. For example, there is a directory on your system in which most programs are installed. The pathname of the directory is **/usr/bin**. This means from the root directory (represented by the leading slash, **/**, in the pathname) there is a directory called "usr" which contains a directory called "bin".  
 
-A relative pathname starts from the working directory. To do this, it uses a couple of special notations to represent relative positions in the file system tree. These special notations are **.** (dot) and **..** (dot dot).  
-The "." notation refers to the working directory itself and the ".." notation refers to the working directory's parent directory.  
+A relative pathname starts from the working directory. To do this, it uses a couple of special notations to represent relative positions in the file system tree. These special notations are **.** (dot) and **..** (dot dot). The "." notation refers to the working directory itself and the ".." notation refers to the working directory's parent directory.  
 We could do that two different ways. First, with an absolute pathname:  
 ![l2](l2.png?raw=true "l2")
 
 Or, with a relative pathname:  
 ![l3](l3.png?raw=true "l3")
 
-Absolute means stating the exact path while relative means no path was stated but move a step back.  
-In most cases, we can omit the "./". `cd bin`  
-If we type cd followed by nothing, cd will change the working directory to our home directory.  
-A related shortcut is to type cd ~user_name. In this case, cd will change the working directory to the home directory of the specified user.  
-Typing **cd -** changes the working directory to the previous one.  
+Absolute means stating the exact path while relative means no path was stated but move a step back. In most cases, we can omit the "./". `cd bin` If we type cd followed by nothing, cd will change the working directory to our home directory. A related shortcut is to type **cd  ~user_name**. In this case, cd will change the working directory to the home directory of the specified user. Typing **cd -** changes the working directory to the previous one.  
 
 ![l4](l4.png?raw=true "l4")
 
