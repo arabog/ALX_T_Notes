@@ -440,3 +440,22 @@ On most Linux systems, man uses less to display the manual page, so all of the f
 Many software packages installed on your system have documentation files residing in the `/usr/share/doc` directory. Most of these are stored in plain text format and can be viewed with less. Some of the files are in HTML format and can be viewed with a web browser. We may encounter some files ending with a **“.gz”** extension. This indicates that they have been compressed with the **gzip** compression program. The gzip package includes a special version of `less` called **zless** that will display the contents of gzip-compressed text files.  
 
 <a href="http://linuxcommand.org/lc3_man_pages/man1.html" target="_blank">man command</a>  
+
+## Creating Symlink To a File 
+```
+ln -s source_file symbolic_link
+```
+Replace source_file with the name of the existing file for which you want to create the symbolic link and symbolic_link with the name of the symbolic link.  
+
+The symbolic_link parameter is optional. If you do not specify the symbolic link, the ln command will create a new link in your current directory.  
+
+ln -s /bin/ls __ls__
+
+
+19. File type: School
+save this in school.mgc
+0 string SCHOOL School data
+!:mime School
+
+Then run this in the terminal
+file -C -m school.mgc
