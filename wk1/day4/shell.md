@@ -117,6 +117,7 @@ ls -l	                    List the files in the working directory in long format
 ls -l /etc /bin             List the files in the /bin directory and the /etc directory in long format  
 ls -la ..	                List all files (even ones with names beginning with a period character,  
 which are normally hidden) in the parent of the working directory in long format  
+ls -l | grep ^d or ls -d */ List only the directories
 ```
 ![l6](l6.png?raw=true "l6")
 ![l10](l10.png?raw=true "l10")
