@@ -1,19 +1,17 @@
-
-
 ## Input Output Redirection
 <a href="http://linuxcommand.org/lc3_lts0070.php" target="_blank">Input Output Redirection</a>  
-Here will explore a powerful feature used by command line programs called input/output redirection. As we have seen, many commands such as ls print their output on the display. This does not have to be the case, however. By using some special notations we can redirect the output of many commands to files, devices, and even to the input of other commands.  
+Here will explore a powerful feature used by command line programs called input/output redirection. As we have seen, many commands such as `ls` print their output on the display. This does not have to be the case, however. By using some special notations we can redirect the output of many commands to files, devices, and even to the input of other commands.  
 
-**ls -l */: displays only the directories and there sub-directories in a working directory**  
+`ls -l */`: displays only the directories and there sub-directories in a working directory  
 
 ### Standard Output
 ![l1](l1.png?raw=true "l1")  
 
-Most command line programs that display their results do so by sending their results to a facility called standard output. By default, standard output directs its contents to the display. To redirect standard output to a file, the ">" character is used like this:
+Most command line programs that display their results do so by sending their results to a facility called standard output. By default, standard output directs its contents to the display. To redirect standard output to a file, the ">", redirection character is used like this:
 ```
 [me@linuxbox me]$ ls > file_list.txt
 ```
-In this example, the ls command is executed and the results are written in a file named file_list.txt. Since the output of ls was redirected to the file, no results appear on the display.  
+In this example, the `ls` command is executed and the results are written in a file named file_list.txt. Since the output of `ls` was redirected to the file, no results appear on the display.  
 
 Each time the command above is repeated, file_list.txt is overwritten from the beginning with the output of the command ls. To have the new results appended to the file instead, we use ">>" like this:  
 ```
@@ -75,7 +73,7 @@ In the first example, we use cat to read the file and output it to standard outp
 
 The second example starts with an unsorted list of data with duplicate entries. First, cat sends the list into sort which sorts it and feeds it into uniq which removes any duplicates. Next pr and lpr are used to paginate and print the list.  
 
-2. **Viewing the contents of tar files** Often you will see software distributed as a gzipped tar file. This is a traditional Unix style tape archive file (created with tar) that has been compressed with gzip. You can recognize these files by their traditional file extensions, ".tar.gz" or ".tgz". You can use the following command to view the directory of such a file on a Linux system:
+2. **Viewing the contents of tar files** Often you will see software distributed as a gzipped tar file. This is a traditional Unix style file (created with tar) that has been compressed with gzip. You can recognize these files by their traditional file extensions, ".tar.gz" or ".tgz". You can use the following command to view the directory of such a file on a Linux system:
 ```
 tar tzvf name_of_file.tar.gz | less
 ```
@@ -100,7 +98,7 @@ If we look at a command like ls, we can see that it displays its results and its
 Keeping with the Unix theme of “everything is a file,” programs such as ls actually send their results to a special file called standard output (often expressed as stdout) and their status messages to another file called standard error (stderr). By default, both standard output and standard error are linked to the screen and not saved into a disk file.  
 
 In addition, many programs take input from a facility called standard input (stdin), which is, by default, attached to the keyboard.    
-I/O redirection allows us to change where output goes and where input comes from. Normally, output goes to the screen and input comes from the keyboard, but with I/O redirection, we can change that.  
+**I/O redirection allows us to change where output goes and where input comes from.** Normally, output goes to the screen and input comes from the keyboard, but with I/O redirection, we can change that.  
 
 ## Redirecting Standard Output
 I/O redirection allows us to redefine where standard output goes. To redirect standard output to another file instead of the screen, we use the > redirection operator followed by the name of the file. Why would we want to do this? It's often useful to store the output of a command in a file. For example, we could tell the shell to send the output of the ls command to the file ls-output.txt instead of the screen:
@@ -147,17 +145,19 @@ Using the >> operator will result in the output being appended to the file. If t
 We repeated the command three times resulting in an output file three times as large.
 
 ## Redirecting Standard Error
-Redirecting standard error lacks the ease of a dedicated redirection operator. To redirect standard error we must refer to its file descriptor. A program can produce output on any of several numbered file streams. While we have referred to the first three of these file streams as standard input, output and error, the shell references them internally as file descriptors 0, 1, and 2, respectively. The shell provides a notation for redirecting files using the file descriptor number. Since standard error is the same as file descriptor number 2, we can redirect standard error with this notation:
+Redirecting standard error lacks the ease of a dedicated redirection operator. To redirect standard error we must refer to its file descriptor. A program can produce output on any of several numbered file streams. **While we have referred to the first three of these file streams as standard input, output and error, the shell references them internally as file descriptors 0, 1, and 2, respectively.** The shell provides a notation for redirecting files using the file descriptor number. Since standard error is the same as file descriptor number 2, we can redirect standard error with this notation:
 ```
 [me@linuxbox ~]$ ls -l /bin/usr 2> ls-error.txt
 ```
-The file descriptor “2” is placed immediately before the redirection operator to perform the redirection of standard error to the file ls-error.txt.  
+**The file descriptor “2” is placed immediately before the redirection operator** to perform the redirection of standard error to the file ls-error.txt.  
 ![l4](l4.png?raw=true "l4")  
 
 ## Redirecting Standard Output and Standard Error to One File
 There are cases in which we may want to capture all of the output of a command to a single file. To do this, we must redirect both standard output and standard error at the same time. There are two ways to do this. Shown here is the traditional way, which works with old versions of the shell:
 ```
 [me@linuxbox ~]$ ls -l /bin/usr > ls-output.txt 2>&1
+that is:
+[me@linuxbox ~]$ [ls -l /bin/usr > ls-output.txt]         [2>&1]
 ```
 Using this method, we perform two redirections. First we redirect standard output to the file ls-output.txt and then we redirect file descriptor 2 (standard error) to file descriptor 1 (standard output) using the notation 2>&1  
 
