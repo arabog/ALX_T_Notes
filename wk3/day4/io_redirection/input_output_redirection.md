@@ -350,6 +350,8 @@ searches are case sensitive)
 Sometimes we don't want all the output from a command. We may only want the first few lines or the last few lines. The head command prints the first ten lines of a file, and the tail command prints the last ten lines. By default, both commands print ten lines of text, but this can be adjusted with the -n option.
 ```
 [me@linuxbox ~]$ head -n 5 ls-output.txt
+or
+[me@linuxbox ~]$ tail -n5 ls-output.txt
 [me@linuxbox ~]$ tail -n 5 ls-output.txt
 ```
 ![l9](l9.png?raw=true "l9")  
