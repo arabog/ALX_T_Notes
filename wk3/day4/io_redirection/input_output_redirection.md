@@ -368,6 +368,8 @@ tail has an option which allows us to view files in real time. This is useful fo
 ```
 ![l11](l11.png?raw=true "l11") 
 
+![l15](l15.png?raw=true "l15") 
+
 Using the “-f” option, tail continues to monitor the file, and when new lines are appended, they immediately appear on the display. This continues until we press Ctrl-c.  
 
 ## tee – Read from Stdin and Output to Stdout and Files
