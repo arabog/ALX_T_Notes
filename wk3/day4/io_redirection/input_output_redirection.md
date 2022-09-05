@@ -180,7 +180,7 @@ In this example, we use the single notation &> to redirect both standard output 
 ```
 ![l5](l5.png?raw=true "l5")  
 
-## Disposing of Unwanted Output
+## Disposing of Unwanted Output: /dev/null
 Sometimes “silence is golden,” and we don't want output from a command, we just want to throw it away. This applies particularly to error and status messages. The system provides a way to do this by redirecting output to a special file called “/dev/null”. This file is a system device often referred to as a bit bucket, which accepts input and does nothing with it. To suppress error messages from a command, we do this:
 ```
 [me@linuxbox ~]$ ls -l /bin/usr 2> /dev/null
@@ -233,20 +233,19 @@ Type the command followed by the text we want to place in the file. Remember to 
 [me@linuxbox ~]$ cat lazy_dog.txt
 The quick brown fox jumped over the lazy dog.
 ```
-Now that we know how cat accepts standard input, in addition to filename arguments, let's try redirecting standard input.
+Now that we know how cat accepts standard input, in addition to filename arguments, let's try **redirecting standard input**.
 ```
 [me@linuxbox ~]$ cat < lazy_dog.txt
 The quick brown fox jumped over the lazy dog.
 ```
-Using the < redirection operator, we change the source of standard input from the keyboard to the file lazy_dog.txt. We see that the result is the same as passing a single filename argument. This is not particularly useful compared to passing a filename argument, but it serves to demonstrate using a file as a source of standard input. Other commands make better use of standard input, as we will soon see.  
-Before we move on, check out the man page for cat, because it has several interesting options.
+Using the < redirection operator, we change the source of standard input from the keyboard to the file lazy_dog.txt. We see that the result is the same as passing a single filename argument. This is not particularly useful compared to passing a filename argument, but it serves to demonstrate using a file as a source of standard input. Other commands make better use of standard input, as we will soon see. Before we move on, check out the man page for cat, because it has several interesting options.  
 
 ## Pipelines
-The capability of commands to read data from standard input and send to standard output is utilized by a shell feature called pipelines. Using the pipe operator | (vertical bar), the standard output of one command can be piped into the standard input of another.
+The capability of commands to read data from standard input and send to standard output is utilized by a shell feature called pipelines. **Using the pipe operator | (vertical bar), the standard output of one command can be piped into the standard input of another.**
 ```
 command1 | command2
 ```
-Remember how we said there was one we already knew that accepts standard input? It's less. We can use less to display, page by page, the output of any command that sends its results to standard output:
+Remember how we said there was one we already knew that accepts standard input? It's **less**. We can use less to display, page by page, the output of any command that sends its results to standard output:
 ```
 [me@linuxbox ~]$ ls -l /usr/bin | less
 ```
@@ -254,9 +253,7 @@ This is extremely handy! Using this technique, we can conveniently examine the o
 
 ## The Difference Between > and |
 At first glance, it may be hard to understand the redirection performed by the
-pipeline operator | versus the redirection operator >. Simply put, the redirection
-operator connects a command with a file, while the pipeline operator connects the
-output of one command with the input of a second command.
+pipeline operator | versus the redirection operator >. Simply put, **the redirection operator connects a command with a file**, while **the pipeline operator connects the output of one command with the input of a second command**.
 ```
 command1 > file1
 command1 | command2
@@ -277,10 +274,17 @@ the second command told the shell to overwrite the file less with the output of
 the ls command. Since the /usr/bin directory already contained a file named
 less (the less program), the second command overwrote the less program
 file with the text from ls, thus destroying the less program on his system.
-The lesson here is that the redirection operator silently creates or overwrites files, so you need to treat it with a lot of respect.
+The lesson here is that the redirection operator silently creates or overwrites files, so you need to treat it with a lot of respect.  
+
+You can also create or copy/append into a new file using:
+```
+cat file1 > file2
+cat file1 >> file2
+```
+file1 content will be copy/append into file2. If file2 doesn't exit it will be created.
 
 ## Filters
-Pipelines are often used to perform complex operations on data. It is possible to put several commands together into a pipeline. Frequently, the commands used this way are referred to as filters. Filters take input, change it somehow, and then output it. The first one we will try is sort. Imagine we wanted to make a combined list of all the executable programs in /bin and /usr/bin, put them in sorted order and view the resulting list:
+Pipelines are often used to perform complex operations on data. It is possible to put several commands together into a pipeline. Frequently, the commands used this way are referred to as filters. **Filters take input, change it somehow, and then output it.** The first one we will try is sort. Imagine we wanted to make a combined list of all the executable programs in /bin and /usr/bin, put them in sorted order and view the resulting list:
 ```
 [me@linuxbox ~]$ ls /bin /usr/bin | sort | less
 ```
@@ -311,7 +315,7 @@ In this case, it prints out three numbers: lines, words, and bytes contained in 
 ![l7](l7.png?raw=true "l7")  
 
 ## grep – Print Lines Matching a Pattern
-grep is a powerful program used to find text patterns within files. It's used like this:
+grep is a powerful program used to **find text patterns within files**. It's used like this:
 ```
 grep pattern [file...]
 ```
@@ -333,10 +337,14 @@ zipsplit
 ```
 ![l8](l8.png?raw=true "l8")  
 
+![l13](l13.png?raw=true "l13")  
+
 There are a couple of handy options for grep:  
 • -i, which causes grep to ignore case when performing the search (normally
 searches are case sensitive)  
 • -v, which tells grep to print only those lines that do not match the pattern.  
+
+![l14](l14.png?raw=true "l14")   
 
 ## head / tail – Print First / Last Part of Files
 Sometimes we don't want all the output from a command. We may only want the first few lines or the last few lines. The head command prints the first ten lines of a file, and the tail command prints the last ten lines. By default, both commands print ten lines of text, but this can be adjusted with the -n option.
