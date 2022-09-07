@@ -68,8 +68,6 @@ Local variables are only available in the current shell. Using the set built-in 
 
 Below is a diff file made by comparing printenv and set output, after leaving out the functions which are also displayed by the set command:
 ```
-
-
 franky ~> diff set.sorted printenv.sorted | grep "<" | awk '{ print $2 }'
 BASE=/nethome/franky/.Shell/hq.garrels.be/octarine.aliases
 BASH=/bin/bash

@@ -11,3 +11,6 @@ unalias
 source
 printf
 ```
+Which command should I use to display the exit code of the previous command?  
+echo $?  
+
