@@ -101,10 +101,45 @@ Linker: combine/link libraries and object code to generate executable files
 ## Betty Coding Style
 https://alx-intranet.hbtn.io/projects/212#task-830  
 
+### Betty style usage
+https://github.com/holbertonschool/Betty/wiki/Betty-style-usage  
 
-    
+o check your C source files or C header files coding style, you can run betty-style script as follows:
+```
+./betty-style.pl file1 [file 2 [file3 [...]]]
+```
+Examples:
+```
+./betty-style.pl main.c
+./betty-style.pl main.c crack_passwd.c utils.h  
+./betty-style.pl src/*.c include/*.h  
+```
+You can see all available options for betty-style by running the script as follows:
+```
+./betty-style.pl --help
+```
+
+### Betty doc usage
+https://github.com/holbertonschool/Betty/wiki/Betty-doc-usage  
+
+To check your C source files or C header files documentation, you can run betty-doc script as follows:
+```
+./betty-doc.pl file
+```
+Examples:
+```
+./betty-doc.pl main.c
+./betty-doc.pl main.c crack_passwd.c utils.h
+./betty-doc.pl src/*.c include/*.h
+```
+You can see all available options for betty-doc by running the script as follows:
+```
+./betty-doc.pl -h
+```
 
 ## kernel_perspective
 https://twitter.com/unix_byte/status/1024147947393495040?s=21
 
 ## Linus Torvalds on C vs. C++
+http://harmful.cat-v.org/software/c++/linus  
+
