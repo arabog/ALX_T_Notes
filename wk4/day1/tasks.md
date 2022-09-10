@@ -110,7 +110,7 @@ $sed -n 's/unix/linux/p' geekfile.txt
 ```
 
 ## 7. It is a good file that cuts iron without making a noise
-Write a shell script that creates a file named exactly "\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)" containing the text Best School ending by a new line. 
+Write a shell script that creates a file named exactly `\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)` containing the text Best School ending by a new line. 
 ``` 
 echo "Best School" > "\*\\\'\"Best School\"\'\\\*$\?\*\*\*\*\*:)"
 
