@@ -127,9 +127,7 @@ Write a script that writes into the file ls_cwd_content the result of the comman
 ```
 ls -la > ls_cwd_content
 ```
-List  information  about the FILEs (the current direc‐
-tory by default).  Sort entries alphabetically if none
-of -cftuvSUX nor --sort is specified.  
+ls -la List  information  about the FILEs (the current directory by default).  Sort entries alphabetically if none of -cftuv SUX nor --sort is specified.  
 ```
 ls -lt  show a long list with last modification time
 
@@ -147,8 +145,7 @@ ls -r, --reverse   reverse order while sorting
 ls -R, --recursive  list subdirectories recursively
 ls -s, --size   print  the  allocated  size  of  each  file, in blocks
 ls -S     sort by file size, largest first
-ls --sort=WORD  sort by WORD instead of name: none  (-U),  size
-(-S), time (-t), version (-v), extension (-X)
+ls --sort=WORD  sort by WORD instead of name: none (-U), size (-S), time (-t), version (-v), extension (-X)
 ls -t     sort by modification time, newest first
 ls -x     list entries by lines instead of by columns
 ls -X     sort alphabetically by entry extension
@@ -183,16 +180,16 @@ This means that this command will never match anything: find bar
 -path /foo/bar/myfile
 
 find -perm mode  File's  permission bits are exactly mode (octal
-or symbolic)
+or symbolic) e.g find -perm 775
 
 find -used n File  was last accessed n days after its status
 was last changed. find -used 1
 
 find -delete Delete files; true if removal succeeded. If [the removal failed, an error message is issued.]
 
-find -ls True; list current file in ls -dils format on standard  output.
+find -ls list current file in ls -dils format on standard  output.
 
-find -print True;  print the full file name on the standard output, followed by a newline.  
+find -print  print the full file name on the standard output, followed by a newline.  
 
 find -type  Supported. POSIX specifies `b', `c', `d', `l', `p',  `f' and `s'.
 Furthermore,  GNU find allows multiple types to be specified at once in a  
@@ -208,7 +205,7 @@ read but not write to.  Files which meet these  crite‐
 ria  but  have other permissions bits set (for example
 if someone can execute the file) will not be matched.
 ```
-find - search for files in a directory hierarchy
+find - **search** for files in a directory hierarchy. find is used to search for file/directory  
 
 ## 11. Don't just count your directories, make your directories count
 Write a script that counts the number of directories and sub-directories in the current directory.
@@ -221,21 +218,14 @@ find . -type d ! -path . -print | wc -l
 $ find . -name *.c -print
 ```
 
-find . -name frcode.c locate.c word_io.c -print
-That  command  is of course not going to work, because
-the -name predicate allows exactly only one pattern as
-argument.   Instead  of  doing  things  this  way, you
-should enclose the pattern in  quotes  or  escape  the
-wildcard,  thus  allowing find to use the pattern with
-the wildcard during the search for file name  matching
-instead of file names expanded by the parent shell:
-$ find . -name '*.c' -print
-$ find . -name \*.c -print
+`find . -name frcode.c locate.c word_io.c -print`  
+That  command  is of course not going to work, because the -name predicate allows exactly only one pattern as argument.   Instead  of  doing  things  this  way, you should enclose the pattern in  quotes  or  escape  the wildcard,  thus  allowing find to use the pattern with the wildcard during the search for file name  matching instead of file names expanded by the parent shell:  
+$ find . -name '*.c' -print  
+$ find . -name \*.c -print  
 
 ## 12. What’s new
-Create a script that displays the 10 newest files in the current directory.
-Requirements:  
-One file per line  
+Create a script that displays the 10 newest files in the current directory.  
+Requirements: One file per line  
 Sorted from the newest to the oldest  
 ```
 ls -1t | head -10
@@ -246,12 +236,25 @@ ls -t sort by modification time, newest first
 
 ## 13. Being unique is better than being perfect
 Create a script that takes a list of words as input and prints only words 
-that appear exactly once.
+that appear exactly once.  
 Input format: One line, one word  
 Output format: One line, one word  
 Words should be sorted  
 ```
-sort | uniq -u
+sort filename | uniq -u
+
+index.txt
+hello
+hello
+Third line
+hello
+hello
+hello
+hello
+hello
+
+sort index.txt | uniq -u
+Third line
 ```
 sort - sort lines of text files. Write sorted concatenation of all FILE(s) to standard output.
 
@@ -259,66 +262,66 @@ uniq - report or omit repeated lines.
 uniq -u, --unique only print unique lines
 
 ## 14. It must be in that file
-Display lines containing the pattern “root” from the file /etc/passwd
+Display lines containing the pattern “root” from the file /etc/passwd  
 
 ## 15. Count that word
-Display the number of lines that contain the pattern “bin” in the file /etc/passwd
+Display the number of lines that contain the pattern “bin” in the file /etc/passwd  
 
 ## 16. What's next?
-Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd.
+Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd.  
 
 ## 17. I hate bins
-Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
+Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.  
 
 ## 18. Letters only please
-Display all lines of the file /etc/ssh/sshd_config starting with a letter.
+Display all lines of the file /etc/ssh/sshd_config starting with a letter.  
 
-include capital letters as well
+include capital letters as well  
 
 ## 19. A to Z
-Replace all characters A and c from input to Z and e respectively.
+Replace all characters A and c from input to Z and e respectively.  
 
 ## 20. Without C, you would live in hiago
-Create a script that removes all letters c and C from input.
+Create a script that removes all letters c and C from input.  
 
 ## 21. esreveR
-Write a script that reverse its input.
+Write a script that reverse its input.  
 
 ## 22. DJ Cut Killer
-Write a script that displays all users and their home directories, sorted by users.
+Write a script that displays all users and their home directories, sorted by users.  
 
-Based on the the /etc/passwd file
+Based on the the /etc/passwd file  
 
 ## 23. Empty casks make the most noise
-Write a command that finds all empty files and directories in the current directory and all sub-directories.
+Write a command that finds all empty files and directories in the current directory and all sub-directories.  
 
-Only the names of the files and directories should be displayed (not the entire path)
-Hidden files should be listed
-One file name per line
-The listing should end with a new line
-You are not allowed to use basename, grep, egrep, fgrep or rgrep
+Only the names of the files and directories should be displayed (not the entire path)  
+Hidden files should be listed  
+One file name per line  
+The listing should end with a new line  
+You are not allowed to use basename, grep, egrep, fgrep or rgrep  
 
 ##  24. A gif is worth ten thousand words
-Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories.
+Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories.  
 
-Hidden files should be listed
-Only regular files (not directories) should be listed
-The names of the files should be displayed without their extensions
-The files should be sorted by byte values, but case-insensitive (file aaa should be listed before file bbb, file .b should be listed before file a, and file Rona should be listed after file jay)
-One file name per line
-The listing should end with a new line
-You are not allowed to use basename, grep, egrep, fgrep or rgrep
+Hidden files should be listed  
+Only regular files (not directories) should be listed  
+The names of the files should be displayed without their extensions  
+The files should be sorted by byte values, but case-insensitive (file aaa should be listed before file bbb, file .b should be listed before file a, and file Rona should be listed after file jay)  
+One file name per line  
+The listing should end with a new line  
+You are not allowed to use basename, grep, egrep, fgrep or rgrep  
 
 ## 25. Acrostic
-An acrostic is a poem (or other form of writing) in which the first letter (or syllable, or word) of each line (or paragraph, or other recurring feature in the text) spells out a word, message or the alphabet. The word comes from the French acrostiche from post-classical Latin acrostichis). As a form of constrained writing, an acrostic can be used as a mnemonic device to aid memory retrieval. Read more.
+An acrostic is a poem (or other form of writing) in which the first letter (or syllable, or word) of each line (or paragraph, or other recurring feature in the text) spells out a word, message or the alphabet. The word comes from the French acrostiche from post-classical Latin acrostichis). As a form of constrained writing, an acrostic can be used as a mnemonic device to aid memory retrieval. Read more.  
 
-Create a script that decodes acrostics that use the first letter of each line.
+Create a script that decodes acrostics that use the first letter of each line.  
 
-The ‘decoded’ message has to end with a new line
-You are not allowed to use grep, egrep, fgrep or rgrep
+The ‘decoded’ message has to end with a new line  
+You are not allowed to use grep, egrep, fgrep or rgrep  
 
 ## 26. The biggest fan
-Write a script that parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.
+Write a script that parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.  
 
-Order by number of requests, most active host or IP at the top
-You are not allowed to use grep, egrep, fgrep or rgrep
+Order by number of requests, most active host or IP at the top  
+You are not allowed to use grep, egrep, fgrep or rgrep  
