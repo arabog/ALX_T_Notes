@@ -8,7 +8,7 @@ echo "Hello, World"
 what do u think of this?
 echo -e "Hello, \n World"
 ```
-echo - display a line of text
+echo - display a line of text  
 -e  enable d interpretatn of backslash escapes
 
 ## 1. Confused smiley
@@ -26,7 +26,7 @@ less /etc/passwd
 ```
 less - opposite of more  
 To edit the file being viewed, press v, ds will initiate a text editor
-u can dn use ctrl s + x to save and exit
+u can dn use ctrl s, ctrl x to save and exit
 
 
 ## 3. What about 2?
@@ -41,13 +41,16 @@ Display the last 10 lines of /etc/passwd
 tail -n10 /etc/passwd  
 ```
 tail - output the last part of files  
-Print the last 10 lines of each FILE to standard output.  With more than
-one FILE, precede each with a header giving the file name?.  
+Print the last 10 lines of each FILE to standard output.    
+With more than one FILE, precede each with a header giving the file name?.  
+```
+tail -v 10 filename(s)
+```
 
 ## 5. I'd prefer the first ones actually
 Display the first 10 lines of /etc/passwd  
 ```
-head /etc/passwd
+head -n 10 /etc/passwd
 ```
 head - output the first part of files    
 -v, --verbose: always print headers giving file names. like print a file name.  
@@ -59,13 +62,14 @@ You’re not allowed to use `sed`
 head -n 3 my_file | tail -n 1
 
 sed '1,4d' file.txt | tail -n 1
-4d means to d 4 line but 4th line not inclusive
+4d means to d 4th line but 4th line not inclusive
 ```
-https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/
+https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/  
 sed(Sream  EDitor  for filtering and transforming text  
-Though most common use of SED command in UNIX is for substitution or for find and replace. By using SED you can edit files even without opening them, which is much quicker way to find and replace something in file, than first opening that file in VI Editor and then changing it.  
+Though most common use of SED command in UNIX is for substitution or to find and replace. By using SED you can edit files even without opening them, which is much quicker way to find and replace something in file, than first opening that file in VI Editor and then changing it.  
 
-**Replacing or substituting string:** Sed command is mostly used to replace the text in a file. The below simple sed command replaces the word “unix” with “linux” in the file.
+**Replacing or substituting string:**  
+Sed command is mostly used to replace the text in a file. The below simple sed command replaces the word “unix” with “linux” in the file.
 ```
 $sed 's/unix/linux/' geekfile.txt
 ```
@@ -73,34 +77,40 @@ Here the “s” specifies the substitution operation. The “/” are delimiter
 
 By default, the sed command replaces the first occurrence of the pattern in each line and it won’t replace the second, third…occurrence in the line.  
 
-**Replacing the nth occurrence of a pattern in a line:** Use the /1, /2 etc flags to replace the first, second occurrence of a pattern in a line. The below command replaces the second occurrence of the word “unix” with “linux” in a line.
+**Replacing the nth occurrence of a pattern in a line:**    
+Use the /1, /2 etc flags to replace the first, second occurrence of a pattern in a line. The below command replaces the second occurrence of the word “unix” with “linux” in a line.
 ```
 $sed 's/unix/linux/2' geekfile.txt
 ```
-**Replacing all the occurrence of the pattern in a line:** The substitute flag /g (global replacement) specifies the sed command to replace all the occurrences of the string in the line.
+**Replacing all the occurrence of the pattern in a line:**  
+The substitute flag /g (global replacement) specifies the sed command to replace all the occurrences of the string in the line.
 ```
 $sed 's/unix/linux/g' geekfile.txt
 ```
-**Replacing from nth occurrence to all occurrences in a line:** Use the combination of /1, /2 etc and /g to replace all the patterns from the nth occurrence of a pattern in a line. The following sed command replaces the third, fourth, fifth… “unix” word with “linux” word in a line.
+**Replacing from nth occurrence to all occurrences in a line:**  
+Use the combination of /1, /2 etc and /g to replace all the patterns from the nth occurrence of a pattern in a line. The following sed command replaces the third, fourth, fifth… “unix” word with “linux” word in a line.
 ```
 $sed 's/unix/linux/3g' geekfile.txt
 ```
-**Replacing string on a specific line number:** You can restrict the sed command to replace the string on a specific line number. An example is
+**Replacing string on a specific line number:**  
+You can restrict the sed command to replace the string on a specific line number. An example is
 ```
 $sed '3 s/unix/linux/' geekfile.txt
 ```
 
-**Duplicating the replaced line with /p flag:** The /p print flag prints the replaced line twice on the terminal. If a line does not have the search pattern and is not replaced, then the /p prints that line only once.
+**Duplicating the replaced line with /p flag:**  
+The /p print flag prints the replaced line twice on the terminal. If a line does not have the search pattern and is not replaced, then the /p prints that line only once.
 ```
 $sed 's/unix/linux/p' geekfile.txt
 ```
-**Printing only the replaced lines:** Use the -n option along with the /p print flag to display only the replaced lines. Here the -n option suppresses the duplicate rows generated by the /p flag and prints the replaced lines only one time.
+**Printing only the replaced lines:**  
+Use the -n option along with the /p print flag to display only the replaced lines. Here the -n option suppresses the duplicate rows generated by the /p flag and prints the replaced lines only one time.
 ```
 $sed -n 's/unix/linux/p' geekfile.txt
 ```
 
 ## 7. It is a good file that cuts iron without making a noise
-Write a shell script that creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line. 
+Write a shell script that creates a file named exactly "\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)" containing the text Best School ending by a new line. 
 ``` 
 echo "Best School" > "\*\\\'\"Best School\"\'\\\*$\?\*\*\*\*\*:)"
 
