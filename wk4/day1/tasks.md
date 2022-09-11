@@ -263,34 +263,83 @@ uniq -u, --unique only print unique lines
 
 ## 14. It must be in that file
 Display lines containing the pattern “root” from the file /etc/passwd  
+```
+grep "root" /etc/passwd
+```
+grep  searches  for  PATTERNS  in  each   FILE.  
+PATTERNS  is  one or more patterns separated by newline characters, and grep prints  each  line that  matches  a  pattern.   Typically PATTERNS
+should be quoted when grep is used in  a  shell command.  
 
 ## 15. Count that word
 Display the number of lines that contain the pattern “bin” in the file /etc/passwd  
+```
+grep -c "bin" /etc/passwd 
+
+grep -c "good" style.txt
+```
 
 ## 16. What's next?
 Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd.  
+```
+grep -A 3 "root" /etc/passwd
+
+grep -A 3 "good" style.txt
+```
+-A NUM, --after-context=NUM Print  NUM  lines  of  trailing  context
+after  matching  lines.   Places  a line containing  a   group   separator   (--) between  contiguous  groups  of matches. With the -o or  --only-matching  option, this  has  no  effect  and  a warning is
+given.  
 
 ## 17. I hate bins
 Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.  
+```
+grep -v "bin" /etc/passwd
+```
+-v, --invert-match Invert  the sense of matching, to select non-matching lines.  
 
 ## 18. Letters only please
 Display all lines of the file /etc/ssh/sshd_config starting with a letter.  
-
 include capital letters as well  
+```
+grep ^[[:alpha:]] /etc/ssh/sshd_config
+
+grep ^[[:alpha:]] style.txt
+```
+Anchoring  The caret ^ and the dollar  sign  $  are  meta-characters  that  respectively  match the empty string at the beginning and end of a line.  
+
 
 ## 19. A to Z
 Replace all characters A and c from input to Z and e respectively.  
+```
+tr 'A' 'Z' | tr 'c' 'e'
+```
+tr - translate or delete characters  
 
 ## 20. Without C, you would live in hiago
 Create a script that removes all letters c and C from input.  
+```
+tr -d 'c' | tr -d 'C'
+```
 
 ## 21. esreveR
 Write a script that reverse its input.  
+```
+rev
+
+rev style.txt
+```
+rev - reverse lines characterwise  
+
 
 ## 22. DJ Cut Killer
 Write a script that displays all users and their home directories, sorted by users.  
-
 Based on the the /etc/passwd file  
+```
+sort /etc/passwd | cut -d':' -f 1,6
+
+cut - remove sections from each line of files
+```
+-d, --delimiter=DELIM   use DELIM instead of TAB for field delimiter
+-f, --fields=LIST       select only these fields;  also print any  line  that  contains no delimiter character, unless the -s option is specified.  
 
 ## 23. Empty casks make the most noise
 Write a command that finds all empty files and directories in the current directory and all sub-directories.  
