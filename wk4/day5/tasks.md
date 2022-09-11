@@ -92,11 +92,10 @@ int main(void)
 ```
 
 ## 2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
-Write a program that prints the alphabet in lowercase, followed by a new line.
-
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
-All your code should be in the main function
-You can only use putchar twice in your code
+Write a program that prints the alphabet in lowercase, followed by a new line.  
+You can only use the `putchar` function (every other function (printf, puts, etc…) is forbidden)  
+All your code should be in the main function  
+You can only use putchar twice in your code  
 ```
 #include <stdio.h>
 
@@ -105,26 +104,31 @@ You can only use putchar twice in your code
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{       
-char xter[26] = "abcdefghijklmnopqrstuvwxyz";
-int i;
+int main(void){       
+    char xter[26] = "abcdefghijklmnopqrstuvwxyz";
+    int i;
 
-for (i = 0; i < 26; i++)
-{       
-putchar(xter[i]);
-}
-putchar('\n');
-return (0);
+    for (i = 0; i < 26; i++){       
+        putchar(xter[i]);
+    }
+
+    putchar('\n');
+
+    return (0);
 }
 ```
+fputc,  fputs,  putc,  putchar,  puts  - output of characters and strings.  
+fputc() writes the character c, cast to an unsigned char, to stream.  
+fputs()  writes  the  string s to stream, without its terminating null byte ('\0').  
+putc() is equivalent to fputc() except that it may be implemented as a macro which evaluates stream more than once.  
+putchar(c) is equivalent to putc(c, stdout).  
+puts() writes the string s and a trailing newline to stdout.  
 
 ## 3. alphABET
-Write a program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.
-
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
-All your code should be in the main function
-You can only use putchar three times in your code 
+Write a program that prints the alphabet in lowercase, and then in uppercase, followed by a new line.  
+You can only use the `putchar` function (every other function (printf, puts, etc…) is forbidden)  
+All your code should be in the main function  
+You can only use putchar three times in your code   
 ```
 #include <stdio.h>
 
@@ -133,27 +137,26 @@ You can only use putchar three times in your code
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-char xter[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-int i;
+int main(void){
+    char xter[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int i;
 
-for (i = 0; i < 52; i++)
-{
-putchar(xter[i]);
-}
-putchar('\n');
-return (0);
+    for (i = 0; i < 52; i++){
+        putchar(xter[i]);
+    }
+
+    putchar('\n');
+    
+    return (0);
 }
 ```
 
 ## 4. When I was having that alphabet soup, I never thought that it would pay off
-Write a program that prints the alphabet in lowercase, followed by a new line.
-
-Print all the letters except q and e
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
-All your code should be in the main function
-You can only use putchar twice in your code
+Write a program that prints the alphabet in lowercase, followed by a new line.  
+Print all the letters except q and e  
+You can only use the `putchar` function (every other function (printf, puts, etc…) is forbidden)  
+All your code should be in the main function  
+You can only use putchar twice in your code  
 ```
 #include <stdio.h>
 #include <stdlib.h>
@@ -164,26 +167,24 @@ You can only use putchar twice in your code
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-int i;
+int main(void){
+    int i;
 
-for (i = 97; i < 123; i++)
-{
-if (i != 101 && i != 113)
-{
-putchar(i);
-}
-}
-putchar('\n');
-return (0);
+    for (i = 97; i < 123; i++){
+        if (i != 101 && i != 113){
+            putchar(i);
+        }
+    }
+
+    putchar('\n');
+
+    return (0);
 }
 ```
 
 ## 5. Numbers
-Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
-
-All your code should be in the main function. 
+Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.  
+All your code should be in the main function.  
 ```
 #include <stdio.h>
 
@@ -192,26 +193,25 @@ All your code should be in the main function.
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-int i;
+int main(void){
+    int i;
 
-for (i = 0; i < 10; i++)
-{
-printf("%d", i);
-}
-putchar('\n');
-return (0);
+    for (i = 0; i < 10; i++){
+        printf("%d", i);
+    }
+
+    putchar('\n');
+    
+    return (0);
 }
 ```
 
 ## 6. Numberz
-Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
-
-You are not allowed to use any variable of type char
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
-You can only use putchar twice in your code
-All your code should be in the main function
+Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.  
+You are not allowed to use any variable of type char  
+You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)  
+You can only use putchar twice in your code  
+All your code should be in the main function  
 ```
 #include <stdio.h>
 
@@ -220,25 +220,24 @@ All your code should be in the main function
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-int i;
+int main(void){
+    int i;
 
-for (i = 48; i < 58; i++)
-{
-putchar(i);
-}
-putchar('\n');
-return (0);
+    for (i = 48; i < 58; i++){
+        putchar(i);
+    }
+
+    putchar('\n');
+    
+    return (0);
 }
 ```
 
 ## 7. Smile in the mirror
-Write a program that prints the lowercase alphabet in reverse, followed by a new line.
-
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
-All your code should be in the main function
-You can only use putchar twice in your code
+Write a program that prints the lowercase alphabet in reverse, followed by a new line.   
+You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)   
+All your code should be in the main function  
+You can only use `putchar` twice in your code  
 ```
 #include <stdio.h>
 
@@ -248,25 +247,24 @@ You can only use putchar twice in your code
 * Return: Always 0 (Success)
 */
 
-int main(void)
-{
-int i;
+int main(void){
+    int i;
 
-for (i = 122; i > 96; i--)
-{
-putchar(i);
-}
-putchar('\n');
-return (0);
+    for (i = 122; i > 96; i--){
+        putchar(i);
+    }
+
+    putchar('\n');
+    
+    return (0);
 }
 ```
 
 ## 8. Hexadecimal
-Write a program that prints all the numbers of base 16 in lowercase, followed by a new line.
-
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
-All your code should be in the main function
-You can only use putchar three times in your code
+Write a program that prints all the numbers of base 16 in lowercase, followed by a new line.  
+You can only use the `putchar` function (every other function (printf, puts, etc…) is forbidden)  
+All your code should be in the main function  
+You can only use `putchar` three times in your code  
 ```
 #include <stdio.h>
 
@@ -275,33 +273,31 @@ You can only use putchar three times in your code
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-int i;
+int main(void){
+    int i;
 
-for (i = 48; i < 58; i++)
-{
-putchar(i);
-}
+    for (i = 48; i < 58; i++){
+        putchar(i);
+    }
 
-for (i = 97; i < 103; i++)
-{
-putchar(i);
-}
-putchar('\n');
-return (0);
+    for (i = 97; i < 103; i++){
+        putchar(i);
+    }
+
+    putchar('\n');
+    
+    return (0);
 }
 ```
 
 ## 9. Patience, persistence and perspiration make an unbeatable combination for success
-Write a program that prints all possible combinations of single-digit numbers.
-
-Numbers must be separated by ,, followed by a space
-Numbers should be printed in ascending order
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
-All your code should be in the main function
-You can only use putchar four times maximum in your code
-You are not allowed to use any variable of type char
+Write a program that prints all possible combinations of single-digit numbers.  
+Numbers must be separated by,',' followed by a space  
+Numbers should be printed in ascending order  
+You can only use the `putchar` function (every other function (printf, puts, etc…) is forbidden)  
+All your code should be in the main function  
+You can only use `putchar` four times maximum in your code  
+You are not allowed to use any variable of type char  
 ```
 #include <stdio.h>
 
@@ -310,37 +306,37 @@ You are not allowed to use any variable of type char
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-int i;
+int main(void){
+    int i;
 
-for (i = 48; i < 58; i++)
-{
-putchar(i);
-if (i != 57)
-{
-putchar(',);
-putchar(' ');
-}
-}
+    for (i = 48; i < 58; i++){
+        putchar(i);
 
-putchar('\n);
-return (0);
+        <!-- As long as i is not 9 (i.e 57) add , and ' ' -->
+        if (i != 57){
+            putchar(',);
+
+            putchar(' ');
+        }
+    }
+
+    putchar('\n);
+    
+    return (0);
 }
 ```
 
 ## 10. Inventing is a combination of brains and materials. The more brains you use, the less material you need
-Write a program that prints all possible different combinations of two digits.
-
-Numbers must be separated by ,, followed by a space
-The two digits must be different
-01 and 10 are considered the same combination of the two digits 0 and 1
-Print only the smallest combination of two digits
-Numbers should be printed in ascending order, with two digits
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
-You can only use putchar five times maximum in your code
-You are not allowed to use any variable of type char
-All your code should be in the main function
+Write a program that prints all possible different combinations of two digits.  
+Numbers must be separated by ,, followed by a space  
+The two digits must be different  
+01 and 10 are considered the same combination of the two digits 0 and 1  
+Print only the smallest combination of two digits  
+Numbers should be printed in ascending order, with two digits  
+You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)  
+You can only use putchar five times maximum in your code  
+You are not allowed to use any variable of type char  
+All your code should be in the main function  
 ```
 #include <stdio.h>
 
@@ -349,35 +345,37 @@ All your code should be in the main function
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-int i, e;
+int main(void){
+    int i, e;
 
-i = 48;
-e = 48;
+    i = 48;
+    e = 48;
 
-while (e < 58)
-{
-i = 48;
-while (i < 58)
-{
-if (e != i && e < i)
-{
-putchar(e);
-putchar(i);
-if (i == 57 && e == 56)
-{
-break;
-}
-putchar(',');
-putchar(' ');
-}
-i++;
-}
-e++;
-}
-putchar('\n');
-return (0);
+    while (e < 58){
+        i = 48;
+
+        while (i < 58){
+            if (e != i && e < i){
+                putchar(e);
+                putchar(i);
+
+                if (i == 57 && e == 56){
+                    break;
+                }
+
+                putchar(',');
+                putchar(' ');
+            }
+
+            i++;
+        }
+
+        e++;
+    }
+
+    putchar('\n');
+    
+    return (0);
 }
 ```
 ## 11. The success combination in business is: Do what you do better... and: do more of what you do...
