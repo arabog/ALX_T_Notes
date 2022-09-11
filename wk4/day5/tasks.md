@@ -328,40 +328,38 @@ int main(void){
 
 ## 10. Inventing is a combination of brains and materials. The more brains you use, the less material you need
 Write a program that prints all possible different combinations of two digits.  
-Numbers must be separated by ,, followed by a space  
+Numbers must be separated by ,',' followed by a space  
 The two digits must be different  
 01 and 10 are considered the same combination of the two digits 0 and 1  
 Print only the smallest combination of two digits  
 Numbers should be printed in ascending order, with two digits  
-You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)  
-You can only use putchar five times maximum in your code  
+You can only use the `putchar` function (every other function (printf, puts, etc…) is forbidden)  
+You can only use `putchar` five times maximum in your code  
 You are not allowed to use any variable of type char  
 All your code should be in the main function  
 ```
 #include <stdio.h>
-
 /**
  * main - Prints numbers between 00 to 89.
  *
  * Return: Always 0 (Success)
  */
 int main(void){
-    int i, e;
-
+    int e, i;
+    e = 48;     //48 => 0
     i = 48;
-    e = 48;
 
     while (e < 58){
         i = 48;
 
-        while (i < 58){
+        while (i < 58){     //58 => Shift (i.e d value after 9(57))
             if (e != i && e < i){
-                putchar(e);
                 putchar(i);
+                putchar(e);
 
-                if (i == 57 && e == 56){
+                <!-- if (i == 57 && e == 56){    //57 => 9, 56 => 8
                     break;
-                }
+                } -->
 
                 putchar(',');
                 putchar(' ');

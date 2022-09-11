@@ -1,33 +1,37 @@
-#include <stdlib.h>
-#include <time.h>
-/* more headers goes there */
 #include <stdio.h>
-/* betty style doc for function main goes there */
 /**
- * main - Determines if a number is positive, negative or zero.
+ * main - Prints numbers between 00 to 89.
  *
  * Return: Always 0 (Success)
-*/
+ */
+int main(void){
+    int e, i;
+    e = 48;     //48 => 0
+    i = 48;
 
-int main(void)
-{
-int n, digit;
+    while (e < 58){
+        i = 48;
 
-srand(time(0));
-n = rand() - RAND_MAX / 2;
-/* your code goes there */
-digit = n % 10;
-if (digit > 5)
-{
-printf("Last digit of %d is %d and is greater than 5\n", n, digit);
-}
-else if (digit == 0)
-{
-printf("Last digit of %d is %d and is 0\n", n, digit);
-}
-else if (digit < 6 || digit != 0)
-{
-printf("Last digit of %d is %d and is less than 6 and not 0\n", n, digit);
-}
-return (0);
+        while (i < 58){     //58 => Shift (i.e d value after 9(57))
+            if (e != i && e < i){
+                putchar(i);
+                putchar(e);
+
+                // if (i == 57 && e == 56){    //57 => 9, 56 => 8
+                //     break;
+                // }
+
+                putchar(',');
+                putchar(' ');
+            }
+
+            i++;
+        }
+
+        e++;
+    }
+
+    putchar('\n');
+    
+    return (0);
 }
