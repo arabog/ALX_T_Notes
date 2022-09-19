@@ -19,6 +19,21 @@ int main(void)
 return (0);
 }
 ```
+```
+julien@ubuntu:~/c/0x00$ export CFILE=main.c
+julien@ubuntu:~/c/0x00$ ./0-preprocessor 
+julien@ubuntu:~/c/0x00$ tail c
+```
+julien@ubuntu:~/c/0x00$ export CFILE=main.c  
+This is meant to save the main.c file inside d variable CFILE  
+
+inside d 0-preprocessor file, gcc $CFILE -E -o c, 
+
+gcc -E Stop after the preprocessing stage; do not run the compiler proper.
+The output is in the form of preprocessed source code, which is
+sent to the standard output.
+
+julien@ubuntu:~/c/0x00$ tail c
 
 ## 1. Compiler
 Write a script that compiles a C file but does not link.  

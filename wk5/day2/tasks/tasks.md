@@ -2,7 +2,9 @@ https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
 
 ## 0. _putchar
 Write a program that prints _putchar, followed by a new line.
-The program should return 0
+The program should return 0  
+
+The putchar(int char) method in C is used to write a character, of unsigned char type, to stdout. This character is passed as the parameter to this method.  
 
 ## 1. Write a function that prints the alphabet, in lowercase, followed by a new line.
 Prototype: void print_alphabet(void);
