@@ -56,4 +56,35 @@ int main()
 
     return 0;
 }
+
+Print out:
+== Possible ways to find value of variable num ==
+Value of num is: 123
+Value of num using pr2 is: 123
+Value of num using pr1 is: 123
+
+== Possible ways to find address of num ==
+Address of num is: 0x7ffefb2d2d44
+Address of num using pr2 is: 0x7ffefb2d2d44
+Address of num using pr1 is: 0x7ffefb2d2d44
+Address of num using pr1 is: 0x7ffefb2d2d48
+
+== Find value of pointer ==
+Value of Pointer pr2 is: 0x7ffefb2d2d44
+Value of Pointer pr2 using pr1 is: 0x7ffefb2d2d44
+
+== Ways to find address of pointer ==
+Address of Pointer pr2 is: 0x7ffefb2d2d48
+Address of Pointer pr2 using pr1 is: 0x7ffefb2d2d48
+
+== Double pointer value and address ==
+Value of Pointer pr1 is: 0x7ffefb2d2d48
+Address of Pointer pr1 is: 0x7ffefb2d2d50
+```
+
+You can also understand the program logic with these simple equations:
+```
+variable of num: num == *pr2 == **pr1
+address of num: &num == pr2 == *pr1
+address of pr2: &pr2 == pr1
 ```
